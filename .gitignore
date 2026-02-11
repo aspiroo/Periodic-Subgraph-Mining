@@ -1,0 +1,42 @@
+# Data files (too large for git)
+data/raw/*.txt
+data/raw/*.mat
+data/raw/keller_networks/
+data/processed/
+data/mappings/
+
+# Results (generated files)
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
+# MATLAB
+*.asv
+*.m~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# External tools (binaries)
+external_tools/listminer/listminer
+external_tools/clusterone/*.jar
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!results/.gitkeep
