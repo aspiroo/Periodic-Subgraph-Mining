@@ -60,10 +60,10 @@ For detailed step-by-step instructions, see **[PIPELINE.md](PIPELINE.md)**.
 ├── scripts/                       # Organized pipeline scripts
 │   ├── 01_preprocessing/          # Data preparation
 │   ├── 02_mining/                 # Subgraph mining with ListMiner
-│   ├── 03_component_extraction/   # Graph component extraction
+│   ├── 03_postprocessing/         # Post-processing (remapping, numbering)
 │   ├── 04_analysis/               # Filtering and analysis
-│   ├── 05_clustering/             # ClusterONE clustering
-│   └── 06_enrichment/             # GO enrichment analysis
+│   ├── 05_utilities/              # Utility scripts (purity, subgraph count, GO extraction)
+│   └── 06_validation/             # Validation scripts (randomization, comparisons, union genes)
 │
 ├── external_tools/                # Third-party tools
 │   ├── listminer/                 # ListMiner binary
@@ -94,10 +94,10 @@ For detailed step-by-step instructions, see **[PIPELINE.md](PIPELINE.md)**.
 |-------|-----------|---------|-----------|
 | 1 | `01_preprocessing` | Convert and prepare network data | Python, MATLAB |
 | 2 | `02_mining` | Mine frequent subgraphs | ListMiner |
-| 3 | `03_component_extraction` | Extract connected components | Python |
+| 3 | `03_postprocessing` | Remap gene numbers and generate files | Python |
 | 4 | `04_analysis` | Filter and remap components | Python |
-| 5 | `05_clustering` | Cluster into functional modules | ClusterONE |
-| 6 | `06_enrichment` | GO term enrichment analysis | FlyEnrichr, FuncAssociate |
+| 5 | `05_utilities` | Calculate purity, extract GO terms, count subgraphs | Python |
+| 6 | `06_validation` | Validate results through randomization and comparison | Python |
 
 ## Documentation
 

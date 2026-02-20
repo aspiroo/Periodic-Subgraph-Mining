@@ -28,10 +28,10 @@ This directory contains detailed documentation covering:
 
 1. **[../scripts/01_preprocessing/README.md](../scripts/01_preprocessing/README.md)** - Data preprocessing
 2. **[../scripts/02_mining/README.md](../scripts/02_mining/README.md)** - Subgraph mining
-3. **[../scripts/03_component_extraction/README.md](../scripts/03_component_extraction/README.md)** - Component extraction
+3. **[../scripts/03_postprocessing/README.md](../scripts/03_postprocessing/README.md)** - Post-processing
 4. **[../scripts/04_analysis/README.md](../scripts/04_analysis/README.md)** - Analysis and filtering
-5. **[../scripts/05_clustering/README.md](../scripts/05_clustering/README.md)** - Clustering
-6. **[../scripts/06_enrichment/README.md](../scripts/06_enrichment/README.md)** - GO enrichment
+5. **[../scripts/05_utilities/README.md](../scripts/05_utilities/README.md)** - Utility scripts
+6. **[../scripts/06_validation/README.md](../scripts/06_validation/README.md)** - Validation
 
 ### Tool Documentation
 
@@ -78,10 +78,10 @@ This directory contains detailed documentation covering:
 **I'm working on...**
 - **Stage 1 (Preprocessing)**: [scripts/01_preprocessing/README.md](../scripts/01_preprocessing/README.md)
 - **Stage 2 (Mining)**: [scripts/02_mining/README.md](../scripts/02_mining/README.md)
-- **Stage 3 (Extraction)**: [scripts/03_component_extraction/README.md](../scripts/03_component_extraction/README.md)
+- **Stage 3 (Post-processing)**: [scripts/03_postprocessing/README.md](../scripts/03_postprocessing/README.md)
 - **Stage 4 (Analysis)**: [scripts/04_analysis/README.md](../scripts/04_analysis/README.md)
-- **Stage 5 (Clustering)**: [scripts/05_clustering/README.md](../scripts/05_clustering/README.md)
-- **Stage 6 (Enrichment)**: [scripts/06_enrichment/README.md](../scripts/06_enrichment/README.md)
+- **Stage 5 (Utilities)**: [scripts/05_utilities/README.md](../scripts/05_utilities/README.md)
+- **Stage 6 (Validation)**: [scripts/06_validation/README.md](../scripts/06_validation/README.md)
 
 ## Documentation Standards
 
