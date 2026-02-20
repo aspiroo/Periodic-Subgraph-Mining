@@ -18,7 +18,7 @@ cd "$SCRIPT_DIR"
 
 # Define paths
 LISTMINER="../../external_tools/listminer/listminer"
-INPUT_DIR="../../data/processed/timesteps"
+INPUT_FILE="../../data/processed/listminer_inputs/listMinerInput.txt"
 OUTPUT_BASE="../../results/listminer_output"
 
 # Check if ListMiner exists
@@ -163,11 +163,9 @@ for SUPPORT in "${SUPPORT_VALUES[@]}"; do
     
     # Run ListMiner
     if $LISTMINER \
-        -i "$INPUT_DIR" \
+        -i "$INPUT_FILE" \
         -o "$OUTPUT_DIR" \
-        -s "$SUPPORT" \
-        -min "$MIN_SIZE" \
-        -max "$MAX_SIZE"; then
+        -s "$SUPPORT"; then
         
         # Record end time
         END_TIME=$(date +%s)
