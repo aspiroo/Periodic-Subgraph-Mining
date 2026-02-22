@@ -14,12 +14,18 @@ This directory contains MATLAB code for:
 
 ### Keller Network Processing
 
-Originally in `Keller codes/` directory:
+Located in `matlab/network_generation/`:
 - **keller.m** - Main Keller network processor
 - **drosophila_subset.m** - Extract network subsets
 - **drosophila_subset_collector.m** - Collect subset data
 - **drosophila_master_subset.m** - Master subset processing
 - **keller_example.m** - Example usage
+
+### Optimization Utilities
+
+Located in `matlab/min_func/`:
+- **minFunc.m** - Main optimization function
+- Supporting functions for L-BFGS optimization
 
 ## Usage
 
@@ -27,20 +33,20 @@ Originally in `Keller codes/` directory:
 
 ```matlab
 % In MATLAB
-cd matlab/
+cd matlab/network_generation/
 
 % Run main processor
 keller
 
 % Or run from command line
-matlab -nodisplay -r "keller; exit"
+matlab -nodisplay -r "cd matlab/network_generation; keller; exit"
 ```
 
 ### Custom Processing
 
 ```matlab
 % Load network data
-load('../data/raw/keller_networks/network_data.mat')
+load('../../data/raw/keller_data/drosophila.mat')
 
 % Process timesteps
 for t = 1:num_timesteps
@@ -63,7 +69,7 @@ MATLAB `.mat` files containing:
 - Gene ID mappings
 - Metadata
 
-Place in: `data/raw/keller_networks/`
+Place in: `data/raw/keller_data/`
 
 ## Output
 
@@ -122,17 +128,16 @@ np.savetxt('edgelist.txt', edges, fmt='%d', delimiter='\t')
 
 ## Migration from Original
 
-The original MATLAB scripts are in `Keller codes/` directory.
+The original MATLAB scripts were in `legacy/Keller codes/` directory and have been copied to `matlab/network_generation/`.
 
 To use them:
 ```bash
-# Option 1: Use original location
-cd "Keller codes"
+# Option 1: Use new organized location (recommended)
+cd matlab/network_generation/
 matlab -nodisplay -r "keller; exit"
 
-# Option 2: Copy to matlab/ (for organization)
-cp "Keller codes"/*.m matlab/
-cd matlab/
+# Option 2: Use legacy location
+cd "legacy/Keller codes"
 matlab -nodisplay -r "keller; exit"
 ```
 
@@ -187,7 +192,7 @@ addpath('../data/processed/');
 
 ```matlab
 % Process all .mat files in directory
-files = dir('../data/raw/keller_networks/*.mat');
+files = dir('../../data/raw/keller_data/*.mat');
 for i = 1:length(files)
     process_network(files(i).name);
 end

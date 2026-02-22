@@ -14,21 +14,15 @@ This stage processes extracted components:
 ## Scripts
 
 ### Filtering
-- **filtering.py** - Remove duplicates and filter by criteria
-- **deduplicate.py** - Remove duplicate components
+- **filter_patterns.py** - Remove duplicates and filter components by criteria
 
 ### Remapping
-- **remappingGenes.py** - Map node IDs to gene IDs
-- **remappingGeneNames.py** - Map gene IDs to gene symbols
-- **remappingGraph.py** - Complete graph remapping
+- **remap_gene_ids.py** - Map node IDs to FlyBase gene IDs
+- **remap_egdes_to_genes.py** - Remap edge-level output to gene-level representation
+- **remap_to_gene_names.py** - Map gene IDs to gene symbols
 
-### Analysis
-- **purity.py** - Calculate component purity scores
-- **analyze_components.py** - Generate statistics
-
-### Utilities
-- **writingIndividualFile.py** - Split/write individual components
-- **unionGenes.py** - Combine components into union network
+### Output
+- **split_patterns_to_files.py** - Split pattern output into individual component files
 
 ## Usage
 
@@ -38,50 +32,33 @@ This stage processes extracted components:
 cd scripts/04_analysis
 
 # Remove duplicates and small components
-python filtering.py \
-    --input ../../results/components/individual/ \
-    --output ../../results/components/cleaned/ \
-    --min-size 3 \
-    --max-size 20
+python filter_patterns.py
 ```
 
 ### Step 2: Remap to Gene IDs
 
 ```bash
 # Map node numbers to gene IDs
-python remappingGenes.py \
-    --input ../../results/components/cleaned/ \
-    --output ../../results/components/remapped/ \
-    --mapping ../../data/mappings/gene_id_mapping.txt
+python remap_gene_ids.py
 ```
 
-### Step 3: Add Gene Names
+### Step 3: Remap Edges to Gene-Level
+
+```bash
+python remap_egdes_to_genes.py
+```
+
+### Step 4: Add Gene Names
 
 ```bash
 # Convert gene IDs to gene symbols
-python remappingGeneNames.py \
-    --input ../../results/components/remapped/ \
-    --output ../../results/components/gene_names/ \
-    --mapping ../../data/mappings/gene_name_mapping.txt
+python remap_to_gene_names.py
 ```
 
-### Step 4: Calculate Purity (Optional)
+### Step 5: Split to Individual Files
 
 ```bash
-# Calculate biological purity of components
-python purity.py \
-    --input ../../results/components/gene_names/ \
-    --output ../../results/purity/ \
-    --annotations ../../data/annotations/go_terms.txt
-```
-
-### Step 5: Create Union Network
-
-```bash
-# Combine all components for clustering
-python unionGenes.py \
-    --input ../../results/components/gene_names/ \
-    --output ../../results/clusters/union_network.txt
+python split_patterns_to_files.py
 ```
 
 ## Input
@@ -225,5 +202,5 @@ For more help, see [docs/TROUBLESHOOTING.md](../../docs/TROUBLESHOOTING.md).
 ## Next Stage
 
 After analysis:
-- Proceed to **Stage 5: Clustering** in `scripts/05_clustering/`
+- Proceed to **Stage 5: Utilities** in `scripts/05_utilities/`
 - See [PIPELINE.md](../../PIPELINE.md) for next steps

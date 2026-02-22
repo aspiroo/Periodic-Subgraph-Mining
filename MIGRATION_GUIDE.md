@@ -31,17 +31,19 @@ Periodic-Subgraph-Mining/
 ├── scripts/
 │   ├── 01_preprocessing/
 │   ├── 02_mining/
-│   ├── 03_component_extraction/
+│   ├── 03_postprocessing/
 │   ├── 04_analysis/
-│   ├── 05_clustering/
-│   └── 06_enrichment/
+│   ├── 05_utilities/
+│   └── 06_validation/
 ├── external_tools/
 │   ├── listminer/
 │   └── clusterone/
 ├── matlab/
+│   ├── network_generation/
+│   └── min_func/
 ├── data/
 ├── results/
-└── legacy/  (for archived original code)
+└── legacy/  (archived original code)
 ```
 
 ## Migration Strategy
@@ -117,7 +119,7 @@ cp "Subgraph Code"/*.py scripts/02_mining/
 
 ```bash
 # Copy component extraction scripts
-cp "Subgraph Code"/subgraph_count.py scripts/03_component_extraction/
+cp "Subgraph Code"/subgraph_count.py scripts/05_utilities/
 ```
 
 #### Analysis Scripts
@@ -127,10 +129,10 @@ cp "Subgraph Code"/subgraph_count.py scripts/03_component_extraction/
 cp "Analysis Code"/*.py scripts/04_analysis/
 
 # Copy post-processing code
-cp "Post Processing Code"/*.py scripts/04_analysis/
+cp "Post Processing Code"/*.py scripts/03_postprocessing/
 
 # Copy purity calculation
-cp "Purity Code"/*.py scripts/04_analysis/
+cp "Purity Code"/*.py scripts/05_utilities/
 ```
 
 #### Clustering Scripts
@@ -139,18 +141,17 @@ cp "Purity Code"/*.py scripts/04_analysis/
 # Copy ClusterONE files
 cp ClusterOne/*.jar external_tools/clusterone/
 cp ClusterOne/*.txt external_tools/clusterone/
-cp ClusterOne/*.py scripts/05_clustering/
 ```
 
 #### Enrichment Scripts
 
 ```bash
 # Copy FlyEnrichr code
-cp "FlyEnrichR Code"/*.py scripts/06_enrichment/
+cp "FlyEnrichR Code"/*.py scripts/06_validation/
 
 # Copy FuncAssociate code
-cp Funcassociate/*.py scripts/06_enrichment/
-cp Funcassociate/*.txt scripts/06_enrichment/
+cp Funcassociate/*.py scripts/06_validation/
+cp Funcassociate/*.txt scripts/06_validation/
 ```
 
 ### Phase 3: Update File Paths
@@ -248,35 +249,22 @@ Once you've verified the new structure works:
 
 ```bash
 # Move old directories to legacy/
-mkdir -p legacy/original_structure
+mkdir -p legacy
 
-mv "Analysis Code" legacy/original_structure/
-mv "Preprocessing Code" legacy/original_structure/
-mv "Post Processing Code" legacy/original_structure/
-mv "Subgraph Code" legacy/original_structure/
-mv "Purity Code" legacy/original_structure/
-mv "ClusterOne" legacy/original_structure/
-mv "FlyEnrichR Code" legacy/original_structure/
-mv "Funcassociate" legacy/original_structure/
-mv "Rest Genes" legacy/original_structure/
-mv "Keller codes" legacy/original_structure/
-
-# Create archive README
-cat > legacy/README.md << 'EOF'
-# Legacy Code Archive
-
-This directory contains the original code structure for reference.
-
-**Do not use these directories for active development.**
-
-Use the organized structure in:
-- scripts/ (for processing code)
-- external_tools/ (for third-party tools)
-- matlab/ (for MATLAB code)
-
-Last archived: $(date)
-EOF
+mv "Analysis Code" legacy/
+mv "Preprocessing Code" legacy/
+mv "Post Processing Code" legacy/
+mv "Subgraph Code" legacy/
+mv "Purity Code" legacy/
+mv "ClusterOne" legacy/
+mv "FlyEnrichR Code" legacy/
+mv "Funcassociate" legacy/
+mv "Rest Genes" legacy/
+mv "Keller codes" legacy/
 ```
+
+> **Note**: Migration to `legacy/` has already been completed in this repository.
+> The original code directories now live directly under `legacy/`.
 
 ## Verification Checklist
 
@@ -359,7 +347,7 @@ git checkout backup-before-migration
 tar -xzf backup_YYYYMMDD.tar.gz
 
 # Or simply use legacy/ directory
-cd legacy/original_structure
+cd legacy
 # Continue using old structure
 ```
 

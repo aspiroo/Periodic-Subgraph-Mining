@@ -69,13 +69,12 @@ Complete pipeline runtime (typical hardware):
 
 **Download**:
 ```bash
-# Create directory
-mkdir -p data/raw/keller_networks
+# The Keller data is already present in data/raw/keller_data/
+# drosophila.mat, drosophila_filtered.mat, drosophila.rawdata
 
-# Download data
-wget [URL] -O data/raw/keller_networks/keller_data.mat
-
-# Or follow instructions from paper for data request
+# If you need to re-obtain the data from the original source:
+mkdir -p data/raw/keller_data
+wget [URL] -O data/raw/keller_data/keller_data.mat
 ```
 
 **Description**: Temporal gene regulatory networks during Drosophila embryogenesis
@@ -107,7 +106,7 @@ gunzip data/mappings/gene_names.tsv.gz
 ```bash
 # Extract node ID to gene ID mapping
 python scripts/create_mappings.py \
-    --input data/raw/keller_networks/keller_data.mat \
+    --input data/raw/keller_data/drosophila.mat \
     --fbgn data/mappings/fbgn_annotations.tsv \
     --output data/mappings/gene_id_mapping.txt
 
@@ -137,7 +136,7 @@ gunzip data/annotations/drosophila_go.gaf.gz
 No parameters (follows Keller lab protocols)
 
 ```bash
-cd "Keller codes"
+cd matlab/network_generation
 matlab -nodisplay -r "keller; exit"
 ```
 
@@ -174,9 +173,8 @@ done
 ### Stage 3: Component Extraction
 
 ```bash
-python "Subgraph Code/subgraph_count.py" \
-    --input results/listminer_output/main_analysis/ \
-    --output results/components/individual/
+cd scripts/05_utilities
+python subgraph_count.py
 ```
 
 **Expected Output**: ~N components
@@ -185,14 +183,10 @@ python "Subgraph Code/subgraph_count.py" \
 
 **Filtering**:
 ```bash
-cd "Analysis Code"
+cd scripts/04_analysis
 
 # Filter components
-python filtering.py \
-    --input ../results/components/individual/ \
-    --output ../results/components/cleaned/ \
-    --min-size 3 \
-    --max-size 50
+python filter_patterns.py
 ```
 
 **Expected Output**: ~M cleaned components
@@ -200,26 +194,16 @@ python filtering.py \
 **Remapping**:
 ```bash
 # Remap to gene IDs
-python remappingGenes.py \
-    --input ../results/components/cleaned/ \
-    --output ../results/components/remapped/ \
-    --mapping ../data/mappings/gene_id_mapping.txt
+python remap_gene_ids.py
 
 # Add gene names
-cd "../Post Processing Code"
-python remappingGeneNames.py \
-    --input ../results/components/remapped/ \
-    --output ../results/components/gene_names/ \
-    --mapping ../data/mappings/gene_name_mapping.txt
+python remap_to_gene_names.py
 ```
 
 **Purity Calculation**:
 ```bash
-cd "../Purity Code"
-python purity.py \
-    --input ../results/components/gene_names/ \
-    --output ../results/purity/ \
-    --annotations ../data/annotations/drosophila_go.gaf
+cd ../05_utilities
+python purity.py
 ```
 
 **Expected**: Mean purity score ~X.XX
@@ -228,21 +212,19 @@ python purity.py \
 
 **Prepare Union Network**:
 ```bash
-cd "../Post Processing Code"
-python unionGenes.py \
-    --input ../results/components/gene_names/ \
-    --output ../results/clusters/union_network.txt
+cd scripts/03_postprocessing
+python 06_union_genes.py
 ```
 
 **ClusterONE Parameters**:
 ```bash
-cd ../ClusterOne
+cd external_tools/clusterone
 
 java -jar cluster_one-1.0.jar \
-    ../results/clusters/union_network.txt \
+    ../../results/clusters/union_network.txt \
     -s 3 \
     -d 0.3 \
-    > ../results/clusters/clusters.txt
+    > ../../results/clusters/clusters.txt
 ```
 
 **Expected Output**: ~K clusters
@@ -256,15 +238,10 @@ java -jar cluster_one-1.0.jar \
 
 **FlyEnrichr Analysis**:
 ```bash
-cd "../FlyEnrichR Code"
+cd scripts/05_utilities
 
-# Process all clusters
-for cluster in ../results/clusters/individual/*.txt; do
-    python flyenrichr_analysis.py \
-        --input "$cluster" \
-        --output ../results/enrichment/flyenrichr/ \
-        --libraries GO_Biological_Process_2018,GO_Molecular_Function_2018
-done
+# Extract GO terms from results
+python extact_GO_terms.py
 ```
 
 **Significance Threshold**: FDR < 0.05
@@ -365,27 +342,27 @@ head results/enrichment/flyenrichr/cluster_001_enrichment.txt
 
 ## Figures from Paper
 
+*(Note: Jupyter notebooks for figure reproduction are not yet included in this repository.)*
+
 ### Figure 1: Network Overview
-- **Data**: Keller networks
-- **Script**: `notebooks/figure1_network_overview.ipynb`
+- **Data**: Keller networks (`data/raw/keller_data/`)
+- **Script**: To be created
 - **Output**: Network visualization across timepoints
 
 ### Figure 2: Mining Results
 - **Data**: ListMiner output (support=3)
-- **Script**: `notebooks/figure2_mining_results.ipynb`
+- **Script**: To be created
 - **Output**: Frequent subgraph statistics
 
 ### Figure 3: Cluster Analysis
 - **Data**: ClusterONE clusters
-- **Script**: `notebooks/figure3_clusters.ipynb`
+- **Script**: To be created
 - **Output**: Cluster network visualization
 
 ### Figure 4: GO Enrichment
 - **Data**: FlyEnrichr results
-- **Script**: `notebooks/figure4_enrichment.ipynb`
+- **Script**: To be created
 - **Output**: Enrichment bar plots
-
-*(Note: Jupyter notebooks to be created for figure reproduction)*
 
 ## Supplementary Materials
 
@@ -398,7 +375,7 @@ head results/enrichment/flyenrichr/cluster_001_enrichment.txt
 **Columns**: Cluster, GO term, P-value, Adjusted P-value, Genes
 
 ### Supplementary Figure 1: Parameter Sensitivity
-**Script**: `notebooks/supp_figure1_sensitivity.ipynb`
+**Script**: To be created
 **Shows**: Effect of support threshold on results
 
 ## Troubleshooting Replication
@@ -466,7 +443,6 @@ For questions about replication:
 - **Data Repository**: [GEO/ArrayExpress ID]
 - **Code Repository**: This GitHub repository
 - **Original Analysis Scripts**: In `legacy/` directory
-
 ## Updates and Errata
 
 **Last Updated**: [Date]

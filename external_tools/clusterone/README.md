@@ -181,7 +181,7 @@ java -Xmx8G -jar cluster_one-1.0.jar ...
 
 - **Official**: http://www.paccanarolab.org/cluster-one/
 - **Paper**: Nepusz et al., Nature Methods, 2012
-- **Pipeline**: [scripts/05_clustering/README.md](../../scripts/05_clustering/README.md)
+- **Pipeline**: [scripts/05_utilities/README.md](../../scripts/05_utilities/README.md)
 
 ## Citation
 

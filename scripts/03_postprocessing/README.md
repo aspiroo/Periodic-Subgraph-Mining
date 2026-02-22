@@ -1,166 +1,98 @@
-# Stage 3: Component Extraction
+# Stage 3: Post-processing
 
-Scripts for extracting individual connected components from mined subgraphs.
+Scripts for remapping ListMiner output to gene identifiers and preparing components for analysis.
 
 ## Overview
 
-This stage processes ListMiner output to extract discrete connected components:
-- Parses frequent subgraph results
-- Identifies connected components within each subgraph
-- Splits multi-component graphs into individual files
-- Generates one file per component for downstream analysis
+This stage transforms the raw ListMiner output into biologically meaningful files:
+- Numbers gene files from the ListMiner edge output
+- Remaps edge numbers back to gene-level graph representations
+- Remaps numeric node IDs to gene numbers (FlyBase IDs)
+- Remaps gene numbers to gene names (symbols)
+- Generates a "development genes" subset file
+- Produces a union-genes file combining all identified genes
 
 ## Scripts
 
-- **subgraph_count.py** - Main component extraction
-- **extract_components.py** - Component identification
-- **split_graphs.py** - Split multi-component graphs
+- **01_number_gene_files.py** - Adds line numbers to gene files from ListMiner output
+- **02_remap_edges_to_graph.py** - Converts edge-number output back to node-level graph files
+- **03_remap_to_gene_numbers.py** - Maps numeric node IDs to FlyBase gene IDs
+- **04_remap_to_gene_names.py** - Converts FlyBase gene IDs to human-readable gene symbols
+- **05_generate_development_genes.py** - Extracts the "just development" gene subset
+- **06_union_genes.py** - Combines all components into a single union-genes file
 
 ## Usage
 
-### Basic Extraction
+### Step 1: Number gene files
 
 ```bash
-cd scripts/03_component_extraction
+cd scripts/03_postprocessing
 
-# Extract components from mining results
-python subgraph_count.py \
-    --input ../../results/listminer_output/support_3_size_4/ \
-    --output ../../results/components/individual/
+python 01_number_gene_files.py
 ```
 
-### Advanced Options
+### Step 2: Remap edges to graph
 
 ```bash
-# Extract with minimum component size filter
-python subgraph_count.py \
-    --input ../../results/listminer_output/support_3_size_4/ \
-    --output ../../results/components/individual/ \
-    --min-nodes 3 \
-    --max-nodes 20
+python 02_remap_edges_to_graph.py
+```
+
+### Step 3: Remap to gene numbers
+
+```bash
+python 03_remap_to_gene_numbers.py
+```
+
+### Step 4: Remap to gene names
+
+```bash
+python 04_remap_to_gene_names.py
+```
+
+### Step 5: Generate development genes
+
+```bash
+python 05_generate_development_genes.py
+```
+
+### Step 6: Generate union genes
+
+```bash
+python 06_union_genes.py
 ```
 
 ## Input
 
-**Location**: `results/listminer_output/*/`
+**Location**: `results/listminer_output/`
 
-**Format**: ListMiner output files containing frequent subgraphs
+**Format**: ListMiner output files containing frequent subgraph edge lists
 
 ## Output
 
-**Location**: `results/components/individual/`
-
-**Format**: One file per connected component
-
-```
-component_001.txt
-component_002.txt
-...
-component_N.txt
-```
-
-Each file contains an edge list:
-```
-node1  node2
-1      2
-2      3
-3      4
-```
-
-## Parameters
-
-- `--input`: Directory with ListMiner output
-- `--output`: Directory for extracted components
-- `--min-nodes`: Minimum component size (default: 2)
-- `--max-nodes`: Maximum component size (default: unlimited)
-- `--format`: Output format (edgelist, adjacency)
-
-## Validation
-
-After extraction:
-
-```bash
-# Count extracted components
-ls ../../results/components/individual/ | wc -l
-
-# View component sizes
-for f in ../../results/components/individual/*.txt; do
-    echo "$f: $(wc -l < $f) edges"
-done | head -10
-
-# Check sample component
-head ../../results/components/individual/component_001.txt
-```
-
-## Component Statistics
-
-Generate statistics:
-
-```bash
-python analyze_components.py \
-    --input ../../results/components/individual/ \
-    --output component_stats.txt
-```
-
-Typical output:
-```
-Total components: 523
-Mean size: 4.2 nodes
-Median size: 4 nodes
-Size range: 3-15 nodes
-```
-
-## Filtering
-
-Components can be filtered by various criteria:
-
-```bash
-# Filter by size
-python filter_components.py \
-    --input ../../results/components/individual/ \
-    --output ../../results/components/filtered/ \
-    --min-size 4 \
-    --max-size 10
-
-# Remove duplicates
-python deduplicate_components.py \
-    --input ../../results/components/individual/ \
-    --output ../../results/components/unique/
-```
-
-## Visualization
-
-Visualize extracted components:
-
-```bash
-# Generate summary plot
-python plot_components.py \
-    --input ../../results/components/individual/ \
-    --output component_distribution.png
-```
+Multiple output files:
+- Numbered gene files
+- Node-level graph files per component
+- Remapped components with FlyBase IDs
+- Components with gene symbol names
+- Development gene subset
+- Union genes file (`results/clusters/union_network.txt`)
 
 ## Troubleshooting
 
-### Issue: No components extracted
+### Issue: Missing input files
 
-- Check ListMiner output is not empty
-- Verify input path is correct
-- Check minimum size threshold
+- Verify ListMiner output exists in `results/listminer_output/`
+- Check that Stage 2 (mining) completed successfully
 
-### Issue: Too many small components
+### Issue: Remapping produces empty output
 
-- Increase `--min-nodes` parameter
-- Check mining support threshold (may be too low)
-
-### Issue: Memory errors
-
-- Process in batches
-- Filter by size during extraction
+- Check that mapping files exist in `data/mappings/`
+- Verify the format of gene ID and gene name mapping files
 
 For more help, see [docs/TROUBLESHOOTING.md](../../docs/TROUBLESHOOTING.md).
 
 ## Next Stage
 
-After component extraction:
+After post-processing:
 - Proceed to **Stage 4: Analysis** in `scripts/04_analysis/`
 - See [PIPELINE.md](../../PIPELINE.md) for next steps
