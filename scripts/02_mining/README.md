@@ -174,5 +174,5 @@ For more help, see [docs/TROUBLESHOOTING.md](../../docs/TROUBLESHOOTING.md).
 ## Next Stage
 
 After mining completes:
-- Proceed to **Stage 3: Component Extraction** in `scripts/03_component_extraction/`
+- Proceed to **Stage 3: Post-processing** in `scripts/03_postprocessing/`
 - See [PIPELINE.md](../../PIPELINE.md) for next steps

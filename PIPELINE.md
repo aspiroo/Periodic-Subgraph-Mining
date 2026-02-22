@@ -51,7 +51,7 @@ ls -R data/ results/ scripts/ external_tools/
 If using Keller lab data:
 
 ```bash
-cd "Keller codes"
+cd matlab/network_generation
 matlab -nodisplay -r "keller; exit"
 ```
 
@@ -60,12 +60,19 @@ This generates timestamped network files in MATLAB format.
 ### 1.2 Convert to Text Format
 
 ```bash
-cd "Preprocessing Code"
+cd scripts/01_preprocessing
 
-# Convert MATLAB networks to text format
-python preprocessing_script.py \
-    --input ../data/raw/keller_networks/ \
-    --output ../data/processed/timesteps/
+# Remove duplicates
+python 02_remove_duplicates.py
+
+# Assign edge numbers
+python 03_assign_edge_numbers.py
+
+# Extract per-timestep files
+python 04_extract_timesteps.py
+
+# Generate ListMiner input
+python 05_generate_listminer_input.py
 ```
 
 **Output**: Individual text files for each time step in `data/processed/timesteps/`
@@ -142,11 +149,9 @@ head results/listminer_output/support_3_size_4/frequent_subgraphs.txt
 ### 3.1 Run Component Extraction
 
 ```bash
-cd "Subgraph Code"
+cd scripts/05_utilities
 
-python subgraph_count.py \
-    --input ../results/listminer_output/support_3_size_4/ \
-    --output ../results/components/individual/
+python subgraph_count.py
 ```
 
 **Output**: One file per connected component in `results/components/individual/`
@@ -168,45 +173,32 @@ head results/components/individual/component_001.txt
 ### 4.1 Filter Components
 
 ```bash
-cd "Analysis Code"
+cd scripts/04_analysis
 
 # Remove duplicates and small components
-python filtering.py \
-    --input ../results/components/individual/ \
-    --output ../results/components/cleaned/ \
-    --min-size 3
+python filter_patterns.py
 ```
 
 ### 4.2 Remap to Gene IDs
 
 ```bash
 # Remap node numbers to gene IDs
-python remappingGenes.py \
-    --input ../results/components/cleaned/ \
-    --output ../results/components/remapped/ \
-    --mapping ../data/mappings/gene_id_mapping.txt
+python remap_gene_ids.py
 ```
 
 ### 4.3 Add Gene Names
 
 ```bash
-cd "../Post Processing Code"
-
 # Convert gene IDs to gene symbols
-python remappingGeneNames.py \
-    --input ../results/components/remapped/ \
-    --output ../results/components/gene_names/ \
-    --mapping ../data/mappings/gene_name_mapping.txt
+python remap_to_gene_names.py
 ```
 
 ### 4.4 Calculate Purity (Optional)
 
 ```bash
-cd "../Purity Code"
+cd ../05_utilities
 
-python purity.py \
-    --input ../results/components/gene_names/ \
-    --output ../results/purity/
+python purity.py
 ```
 
 ### 4.5 Verify Analysis
@@ -228,22 +220,20 @@ head results/components/gene_names/component_001_genes.txt
 Components need to be combined into a single network file:
 
 ```bash
-cd "Post Processing Code"
+cd scripts/03_postprocessing
 
-python unionGenes.py \
-    --input ../results/components/gene_names/ \
-    --output ../results/clusters/union_network.txt
+python 06_union_genes.py
 ```
 
 ### 5.2 Run ClusterONE
 
 ```bash
-cd ClusterOne
+cd external_tools/clusterone
 
 java -jar cluster_one-1.0.jar \
-    ../results/clusters/union_network.txt \
+    ../../results/clusters/union_network.txt \
     -s 3 \
-    > ../results/clusters/clusters.txt
+    > ../../results/clusters/clusters.txt
 ```
 
 **Parameters**:
@@ -276,28 +266,15 @@ wc -l results/clusters/individual/*.txt
 ### 6.1 FlyEnrichr Analysis
 
 ```bash
-cd "FlyEnrichR Code"
+cd scripts/05_utilities
 
-# Run enrichment for each cluster
-for cluster in ../results/clusters/individual/*.txt; do
-    python flyenrichr_analysis.py \
-        --input "$cluster" \
-        --output ../results/enrichment/flyenrichr/
-done
+# Extract GO terms from FlyEnrichr results
+python extact_GO_terms.py
 ```
 
 ### 6.2 FuncAssociate Analysis (Alternative)
 
-```bash
-cd Funcassociate
-
-# Prepare input files
-python prepare_funcassociate.py \
-    --input ../results/clusters/individual/ \
-    --output ../results/enrichment/funcassociate/input/
-
-# Run FuncAssociate (follow tool-specific instructions)
-```
+The FuncAssociate results are available in `legacy/Funcassociate/` for reference.
 
 ### 6.3 Verify Enrichment
 
@@ -411,7 +388,7 @@ ls results/components/cleaned/*.txt | \
 
 After completing the pipeline:
 
-1. **Explore Results**: Use Jupyter notebooks in `notebooks/`
+1. **Explore Results**: Use the validation scripts in `scripts/06_validation/`
 2. **Visualize Networks**: Use Cytoscape for network visualization
 3. **Compare Conditions**: Run pipeline on different datasets
 4. **Validate Findings**: Use literature and databases to validate discovered modules

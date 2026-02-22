@@ -23,21 +23,20 @@ For new work, use the organized structure:
 
 ## Original Structure
 
-If populated, this directory may contain:
+This directory contains the original code directories:
 
 ```
 legacy/
-└── original_structure/
-    ├── Analysis Code/
-    ├── Preprocessing Code/
-    ├── Post Processing Code/
-    ├── Subgraph Code/
-    ├── Purity Code/
-    ├── ClusterOne/
-    ├── FlyEnrichR Code/
-    ├── Funcassociate/
-    ├── Rest Genes/
-    └── Keller codes/
+├── Analysis Code/
+├── Preprocessing Code/
+├── Post Processing Code/
+├── Subgraph Code/
+├── Purity Code/
+├── ClusterOne/
+├── FlyEnrichR Code/
+├── Funcassociate/
+├── Rest Genes/
+└── Keller codes/
 ```
 
 ## When to Use
@@ -50,33 +49,33 @@ Use legacy code only if:
 
 ## Migration Status
 
-This directory is created as part of repository reorganization.
+**Status**: Migration complete. All original directories have been moved to `legacy/`.
 
-**Status**: Awaiting migration (original directories currently at repository root)
+The organized structure is now active:
+- `scripts/` - Processing pipeline scripts
+- `external_tools/` - Third-party tools
+- `matlab/` - MATLAB code
+- `data/` - Input data
+- `results/` - Output results
 
-See [MIGRATION_GUIDE.md](../MIGRATION_GUIDE.md) for migration instructions.
+See [MIGRATION_GUIDE.md](../MIGRATION_GUIDE.md) for migration details.
 
 ## Archiving Process
 
-When you're ready to archive old code:
+The original code has already been archived to this directory:
 
 ```bash
-# Move original directories here
-mkdir -p legacy/original_structure
-
-mv "Analysis Code" legacy/original_structure/
-mv "Preprocessing Code" legacy/original_structure/
-mv "Post Processing Code" legacy/original_structure/
-mv "Subgraph Code" legacy/original_structure/
-mv "Purity Code" legacy/original_structure/
-mv "ClusterOne" legacy/original_structure/
-mv "FlyEnrichR Code" legacy/original_structure/
-mv "Funcassociate" legacy/original_structure/
-mv "Rest Genes" legacy/original_structure/
-mv "Keller codes" legacy/original_structure/
-
-# Add archive date
-echo "Archived: $(date)" >> legacy/ARCHIVE_DATE.txt
+# How the migration was performed
+mv "Analysis Code" legacy/
+mv "Preprocessing Code" legacy/
+mv "Post Processing Code" legacy/
+mv "Subgraph Code" legacy/
+mv "Purity Code" legacy/
+mv "ClusterOne" legacy/
+mv "FlyEnrichR Code" legacy/
+mv "Funcassociate" legacy/
+mv "Rest Genes" legacy/
+mv "Keller codes" legacy/
 ```
 
 ## Using Legacy Code
@@ -85,7 +84,7 @@ If you need to run legacy code:
 
 ```bash
 # Navigate to legacy directory
-cd legacy/original_structure
+cd legacy
 
 # Use old structure
 cd "Analysis Code"
@@ -138,8 +137,6 @@ See [MIGRATION_GUIDE.md](../MIGRATION_GUIDE.md) Option 3: Hybrid Approach.
 
 ---
 
-**Last Updated**: [To be filled during migration]
+**Last Updated**: After repository migration
 
-**Archive Status**: Awaiting migration
-
-**Original Code Location**: Currently at repository root
+**Archive Status**: Complete - original code directories are in `legacy/`
