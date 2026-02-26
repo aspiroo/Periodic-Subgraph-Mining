@@ -1,0 +1,10 @@
+start 1 psup 35 p 1 m 0 [18213 408]
+start 21 psup 24 p 1 m 0 [13152 65]
+start 26 psup 21 p 1 m 0 [18340]
+start 43 psup 21 p 1 m 0 [18254 402 18266 2748 90 12455 105 17795 118]
+start 42 psup 22 p 1 m 0 [18254 402 18266 17795 118]
+start 39 psup 25 p 1 m 0 [18254 402]
+start 47 psup 20 p 1 m 0 [15287 7 1 18323 18181 18450 528 18435 10298]
+start 45 psup 22 p 1 m 0 [15287 7 1]
+Completion Time: 154 ms
+Number of PSEs:  8

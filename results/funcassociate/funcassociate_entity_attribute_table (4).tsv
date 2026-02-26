@@ -1,0 +1,49 @@
+	GO:0007501	GO:0043035	GO:0001703	GO:0010004	GO:0007507	GO:0006355	GO:1903506	GO:2001141	GO:0009950	GO:0051252	GO:0019219	GO:2000112	GO:0010556	GO:0031326	GO:0009889	GO:0051171	GO:0010468	GO:0005634	GO:0006357	GO:0060255	GO:0080090	GO:0031323	GO:0008134	GO:0019222	GO:0005515	GO:0009798	GO:0000981	GO:0043231	GO:0043227	GO:0003677	GO:0043229	GO:0043226	GO:0001071	GO:0003700	GO:0050794	GO:0050789	GO:0048468	GO:0007389	GO:0003676
+FBgn0004915	0	0	0	0	0	1	1	1	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	0	1	1	0	1	1	0	0	1	1	0	0	0
+FBgn0015602	0	1	0	0	0	1	1	1	0	1	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	0	0	1	1	1	1	1	0	0	1	1	1	0	1
+FBgn0260632	1	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+FBgn0011655	0	0	0	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1	0	1	1	1	1	1	1	1	1	1	1	1	1
+FBgn0000283	0	1	0	0	0	1	1	1	0	1	1	1	1	1	1	1	1	1	0	1	1	1	0	1	1	0	0	1	1	1	1	1	0	0	1	1	0	0	1
+FBgn0003900	1	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1
+FBgn0001168	0	0	0	0	0	1	1	1	0	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	1	0	1	1	1	1	1	1	1	1	1	1	0	1	1
+
+
+GO:0007501	mesodermal cell fate specification
+GO:0043035	chromatin insulator sequence binding
+GO:0001703	gastrulation with mouth forming first
+GO:0010004	gastrulation involving germ band extension
+GO:0007507	heart development
+GO:0006355	regulation of transcription, DNA-templated
+GO:1903506	regulation of nucleic acid-templated transcription
+GO:2001141	regulation of RNA biosynthetic process
+GO:0009950	dorsal/ventral axis specification
+GO:0051252	regulation of RNA metabolic process
+GO:0019219	regulation of nucleobase-containing compound metabolic process
+GO:2000112	regulation of cellular macromolecule biosynthetic process
+GO:0010556	regulation of macromolecule biosynthetic process
+GO:0031326	regulation of cellular biosynthetic process
+GO:0009889	regulation of biosynthetic process
+GO:0051171	regulation of nitrogen compound metabolic process
+GO:0010468	regulation of gene expression
+GO:0005634	nucleus
+GO:0006357	regulation of transcription from RNA polymerase II promoter
+GO:0060255	regulation of macromolecule metabolic process
+GO:0080090	regulation of primary metabolic process
+GO:0031323	regulation of cellular metabolic process
+GO:0008134	transcription factor binding
+GO:0019222	regulation of metabolic process
+GO:0005515	protein binding
+GO:0009798	axis specification
+GO:0000981	RNA polymerase II transcription factor activity, sequence-specific DNA binding
+GO:0043231	intracellular membrane-bounded organelle
+GO:0043227	membrane-bounded organelle
+GO:0003677	DNA binding
+GO:0043229	intracellular organelle
+GO:0043226	organelle
+GO:0001071	nucleic acid binding transcription factor activity
+GO:0003700	transcription factor activity, sequence-specific DNA binding
+GO:0050794	regulation of cellular process
+GO:0050789	regulation of biological process
+GO:0048468	cell development
+GO:0007389	pattern specification process
+GO:0003676	nucleic acid binding

@@ -1,12 +1,4 @@
-# Data files (too large for git)
-data/raw/*.txt
-data/raw/*.mat
-data/raw/keller_networks/
-data/processed/
-data/mappings/
 
-# Results (generated files)
-results/
 
 # Python
 __pycache__/
@@ -32,9 +24,6 @@ Thumbs.db
 .idea/
 *.swp
 
-# External tools (binaries)
-external_tools/listminer/listminer
-external_tools/clusterone/*.jar
 
 # Keep folder structure
 !data/raw/.gitkeep

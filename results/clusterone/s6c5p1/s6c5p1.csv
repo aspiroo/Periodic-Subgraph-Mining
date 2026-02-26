@@ -1,0 +1,12 @@
+Cluster,Size,Density,Internal weight,External weight,Quality,P-value,Members
+1,11,0.6000,33.00,16.00,NaN,5.46132e-05,"pot cos Pde8 sec23 pbl Su(H) emp osa mbo alph tum"
+2,10,0.6222,28.00,15.00,NaN,0.000134695,"pot cos sec23 wee pbl Su(H) cactin osa mbo alph"
+3,5,0.7000,7.000,3.000,NaN,0.0206290,"Sobp sar1 tub B4 scrib"
+4,5,0.7000,7.000,3.000,NaN,0.0206290,"Cyt-c-d Sobp tub B4 scrib"
+5,5,0.7000,7.000,3.000,NaN,0.0325982,"Sobp tub B4 l(2)gd1 scrib"
+6,5,0.6000,6.000,9.000,NaN,0.139821,"Pi3K92E Sulf1 inv bib Ark"
+7,5,0.6000,6.000,6.000,NaN,0.142906,"prd MED4 tou 140up Moe"
+8,8,0.6071,17.00,32.00,NaN,0.195623,"Borr Eip63F-1 hpo da Stat92E Dl Caf1 E(z)"
+9,5,0.6000,6.000,18.00,NaN,0.334711,"bon rdo esc CycE glu"
+10,5,0.6000,6.000,28.00,NaN,0.335687,"Borr da cin spn-A tok"
+11,8,0.6071,17.00,43.00,NaN,0.521286,"Borr hpo da asf1 CG16719 rdo thr dmt"

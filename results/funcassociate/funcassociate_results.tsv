@@ -1,0 +1,66 @@
+# species: Drosophila melanogaster
+# support: EXP, IMP, ISS, ISM, TAS, IEA, HMP, HEP, IDA, IGI, ISO, IGC, NAS, HGI, IPI, IEP, ISA, RCA, IC, HDA
+# associations retrieved on: 2019-07-08 01:30:45-04
+# gofunc built on: 2018-02-21 10:04:34.764444-05
+# gene associations file: ftp://ftp.geneontology.org/pub/go/gene-associations/gene_association.fb.gz
+#   revision: 2018-02-02 $
+#   downloaded on: 2018-02-14 09:47:16-05
+# GO DAG files from: http://archive.geneontology.org/latest-full/go_201512-termdb-tables.tar.gz
+#   downloaded on: 2015-12-22 05:43:21-05
+# translation required: no
+# size of "genespace": 14512
+# number of attributes: 9997
+# NOTE: the last record consists of all the entities in the
+# "genespace" that are not associated with any attribute (for
+# the requested support).
+# Original number of entities in query: 7
+# Number of entities in query: 7
+# Total number of entities: 14512
+# Total number of attributes: 9997
+# Translation required: no
+# Mode: ordered
+# Number of simulations: 1000
+# Adjusted P-value cutoff: 0.05
+# Over/under: over
+# Evidence codes: EXP, IMP, ISS, ISM, TAS, IEA, HMP, HEP, IDA, IGI, ISO, IGC, NAS, HGI, IPI, IEP, ISA, RCA, IC, HDA
+OVERREPRESENTED ATTRIBUTES
+N	M	X	LOD	P	P_adj	attrib ID	attrib name
+2	6	11	2.9282970070281	7.82241221999056e-06	0.011	GO:0007501	mesodermal cell fate specification
+2	5	14	2.91819515158394	8.62835722893917e-06	0.012	GO:0043035	chromatin insulator sequence binding
+2	6	14	2.80902072048367	1.29353963656775e-05	0.021	GO:0001703	gastrulation with mouth forming first
+2	6	14	2.80902072048367	1.29353963656775e-05	0.021	GO:0010004	gastrulation involving germ band extension
+3	6	58	2.4156199441023	1.20148414908197e-06	0.002	GO:0007507	heart development
+7	7	931	2.34313208152762	4.37891421518111e-09	0	GO:0006355	regulation of transcription, DNA-templated
+7	7	931	2.34313208152762	4.37891421518111e-09	0	GO:1903506	regulation of nucleic acid-templated transcription
+7	7	931	2.34313208152762	4.37891421518111e-09	0	GO:2001141	regulation of RNA biosynthetic process
+3	6	69	2.33676058556774	2.03664934566339e-06	0.005	GO:0009950	dorsal/ventral axis specification
+7	7	1019	2.30082084055724	8.25634304815379e-09	0	GO:0051252	regulation of RNA metabolic process
+7	7	1063	2.2809278969294	1.11089576078659e-08	0	GO:0019219	regulation of nucleobase-containing compound metabolic process
+7	7	1074	2.27607417100512	1.19414938429433e-08	0	GO:2000112	regulation of cellular macromolecule biosynthetic process
+7	7	1078	2.27432059134455	1.2257210720601e-08	0	GO:0010556	regulation of macromolecule biosynthetic process
+7	7	1129	2.25247461264121	1.6955148662713e-08	0	GO:0031326	regulation of cellular biosynthetic process
+7	7	1132	2.25121810208845	1.72739034301579e-08	0	GO:0009889	regulation of biosynthetic process
+7	7	1209	2.21997208796319	2.7413509521559e-08	0	GO:0051171	regulation of nitrogen compound metabolic process
+7	7	1233	2.21060542978858	3.14680205532794e-08	0	GO:0010468	regulation of gene expression
+7	7	1407	2.14726174066354	7.9451908548696e-08	0	GO:0005634	nucleus
+6	7	445	2.14204926871969	5.48566555905037e-09	0	GO:0006357	regulation of transcription from RNA polymerase II promoter
+7	7	1604	2.08352617131808	1.99193248979405e-07	0.001	GO:0060255	regulation of macromolecule metabolic process
+7	7	1631	2.07533798122708	2.23932007654124e-07	0.001	GO:0080090	regulation of primary metabolic process
+7	7	1684	2.05960460874024	2.80226696026769e-07	0.001	GO:0031323	regulation of cellular metabolic process
+3	7	114	2.00177724723554	1.61499324730884e-05	0.023	GO:0008134	transcription factor binding
+7	7	1896	2.00068325483387	6.43561810776352e-07	0.001	GO:0019222	regulation of metabolic process
+7	7	1968	1.9819563024306	8.35745356468973e-07	0.002	GO:0005515	protein binding
+3	6	155	1.97371822594507	2.33450521946799e-05	0.029	GO:0009798	axis specification
+3	7	139	1.91316453591841	2.92630411977767e-05	0.035	GO:0000981	RNA polymerase II transcription factor activity, sequence-specific DNA binding
+7	7	2263	1.91077428323291	2.22482342010819e-06	0.005	GO:0043231	intracellular membrane-bounded organelle
+7	7	2273	1.90849921232049	2.29465545171525e-06	0.005	GO:0043227	membrane-bounded organelle
+6	7	815	1.86521484633417	2.05515556991112e-07	0.001	GO:0003677	DNA binding
+7	7	2746	1.80906725342963	8.63212079512114e-06	0.012	GO:0043229	intracellular organelle
+7	7	2809	1.79686139725936	1.01193020328795e-05	0.018	GO:0043226	organelle
+4	7	296	1.79571963284718	5.65581654411246e-06	0.009	GO:0001071	nucleic acid binding transcription factor activity
+4	7	296	1.79571963284718	5.65581654411246e-06	0.009	GO:0003700	transcription factor activity, sequence-specific DNA binding
+7	7	3232	1.71982256268822	2.70404176967621e-05	0.034	GO:0050794	regulation of cellular process
+7	7	3533	1.66932993392308	5.04614950815495e-05	0.048	GO:0050789	regulation of biological process
+4	6	636	1.59642931651657	5.10786292902619e-05	0.048	GO:0048468	cell development
+4	7	498	1.56146280462715	4.415324457829e-05	0.046	GO:0007389	pattern specification process
+6	7	1829	1.47912120092682	2.48543240041181e-05	0.032	GO:0003676	nucleic acid binding
