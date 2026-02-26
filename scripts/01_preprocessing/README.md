@@ -14,13 +14,15 @@ This stage converts raw network data into the format required by ListMiner:
 
 ### Main Scripts
 
-- **preprocessing_script.py** - Main preprocessing pipeline
-- **convert_format.py** - Format conversion utilities
-- **validate_networks.py** - Data validation
+- **02_remove_duplicates.py** - Remove duplicate edges from the input network
+- **03_assign_edge_numbers.py** - Assign sequential numbers to edges
+- **04_extract_timesteps.py** - Extract individual timestep files from the Keller dataset
+- **05_generate_listminer_input.py** - Format data into ListMiner input format
+- **run_all.sh** - Run all preprocessing steps in order
 
 ### MATLAB Scripts
 
-Located in `matlab/` directory:
+Located in `matlab/network_generation/` directory:
 - **keller.m** - Process Keller lab networks
 - **drosophila_subset_collector.m** - Extract network subsets
 
@@ -31,10 +33,14 @@ Located in `matlab/` directory:
 ```bash
 cd scripts/01_preprocessing
 
-# Convert and prepare data
-python preprocessing_script.py \
-    --input ../../data/raw/ \
-    --output ../../data/processed/timesteps/
+# Run all preprocessing steps
+bash run_all.sh
+
+# Or run individual steps:
+python 02_remove_duplicates.py
+python 03_assign_edge_numbers.py
+python 04_extract_timesteps.py
+python 05_generate_listminer_input.py
 ```
 
 ### Process Keller Networks
@@ -42,12 +48,8 @@ python preprocessing_script.py \
 If using Keller lab MATLAB data:
 
 ```bash
-# Option 1: Use MATLAB
-cd ../../matlab
-matlab -nodisplay -r "keller; exit"
-
-# Option 2: Use original Keller codes
-cd "../../Keller codes"
+# Use MATLAB scripts in matlab/network_generation/
+cd matlab/network_generation
 matlab -nodisplay -r "keller; exit"
 ```
 

@@ -39,7 +39,7 @@ For detailed step-by-step instructions, see **[PIPELINE.md](PIPELINE.md)**.
 .
 ├── data/                          # Input data (not in git)
 │   ├── raw/                       # Original network files
-│   │   └── keller_networks/       # Keller lab network data
+│   │   └── keller_data/           # Keller lab network data (.mat files)
 │   ├── processed/                 # Preprocessed networks
 │   │   └── timesteps/             # Individual time step files
 │   └── mappings/                  # Gene ID mappings
@@ -60,32 +60,32 @@ For detailed step-by-step instructions, see **[PIPELINE.md](PIPELINE.md)**.
 ├── scripts/                       # Organized pipeline scripts
 │   ├── 01_preprocessing/          # Data preparation
 │   ├── 02_mining/                 # Subgraph mining with ListMiner
-│   ├── 03_component_extraction/   # Graph component extraction
+│   ├── 03_postprocessing/         # Post-processing (remapping, numbering)
 │   ├── 04_analysis/               # Filtering and analysis
-│   ├── 05_clustering/             # ClusterONE clustering
-│   └── 06_enrichment/             # GO enrichment analysis
+│   ├── 05_utilities/              # Utility scripts (purity, subgraph count, GO extraction)
+│   └── 06_validation/             # Validation scripts (randomization, comparisons, union genes)
 │
 ├── external_tools/                # Third-party tools
-│   ├── listminer/                 # ListMiner binary
+│   ├── listminer/                 # ListMiner binary and source
 │   └── clusterone/                # ClusterONE JAR
 │
 ├── matlab/                        # MATLAB preprocessing scripts
-├── notebooks/                     # Jupyter notebooks for analysis
+│   ├── network_generation/        # Keller network generation scripts
+│   └── min_func/                  # Optimization utility functions
+│
 ├── docs/                          # Documentation
 │
-├── legacy/                        # Original code structure (preserved)
-│   # (Use MIGRATION_GUIDE.md to populate this)
-│
-├── Analysis Code/                 # Original analysis scripts
-├── Preprocessing Code/            # Original preprocessing scripts
-├── Post Processing Code/          # Original post-processing scripts
-├── Subgraph Code/                 # Original subgraph mining scripts
-├── Purity Code/                   # Original purity calculation
-├── ClusterOne/                    # ClusterONE files
-├── FlyEnrichR Code/               # FlyEnrichr scripts
-├── Funcassociate/                 # FuncAssociate scripts
-├── Rest Genes/                    # Additional gene data
-└── Keller codes/                  # Keller network MATLAB codes
+└── legacy/                        # Original code structure (preserved for reference)
+    ├── Analysis Code/             # Original analysis scripts
+    ├── Preprocessing Code/        # Original preprocessing scripts
+    ├── Post Processing Code/      # Original post-processing scripts
+    ├── Subgraph Code/             # Original subgraph mining scripts
+    ├── Purity Code/               # Original purity calculation
+    ├── ClusterOne/                # ClusterONE result files
+    ├── FlyEnrichR Code/           # FlyEnrichr scripts
+    ├── Funcassociate/             # FuncAssociate scripts
+    ├── Rest Genes/                # Additional gene data
+    └── Keller codes/              # Keller network MATLAB codes
 ```
 
 ## Pipeline Stages
@@ -94,10 +94,10 @@ For detailed step-by-step instructions, see **[PIPELINE.md](PIPELINE.md)**.
 |-------|-----------|---------|-----------|
 | 1 | `01_preprocessing` | Convert and prepare network data | Python, MATLAB |
 | 2 | `02_mining` | Mine frequent subgraphs | ListMiner |
-| 3 | `03_component_extraction` | Extract connected components | Python |
+| 3 | `03_postprocessing` | Remap gene numbers and generate files | Python |
 | 4 | `04_analysis` | Filter and remap components | Python |
-| 5 | `05_clustering` | Cluster into functional modules | ClusterONE |
-| 6 | `06_enrichment` | GO term enrichment analysis | FlyEnrichr, FuncAssociate |
+| 5 | `05_utilities` | Calculate purity, extract GO terms, count subgraphs | Python |
+| 6 | `06_validation` | Validate results through randomization and comparison | Python |
 
 ## Documentation
 
@@ -123,6 +123,10 @@ The pipeline requires temporal gene regulatory networks with:
 - Edge lists in tab-delimited format
 
 See `data/raw/README.md` for detailed format specifications.
+
+## Source Code Organization
+
+The pipeline scripts are organized into numbered stages under `scripts/`, each mirroring one pipeline stage. Original legacy code (before reorganization) is preserved in `legacy/` for reference. MATLAB utilities live under `matlab/network_generation/` and `matlab/min_func/`.
 
 ## Citation
 

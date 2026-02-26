@@ -54,9 +54,8 @@ Place in: `data/mappings/`
 
 If using Keller lab networks:
 
-1. Download data from [source]
-2. Place MATLAB `.mat` files in `data/raw/keller_networks/`
-3. Run preprocessing scripts in `Keller codes/` or `matlab/`
+1. The Keller `.mat` files are already present in `data/raw/keller_data/`
+2. Run preprocessing scripts in `matlab/network_generation/`
 
 ## Data Sources
 

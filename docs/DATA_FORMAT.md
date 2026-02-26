@@ -62,7 +62,7 @@ wc -l data/raw/*.txt
 
 **Purpose**: Keller lab network data
 
-**Location**: `data/raw/keller_networks/`
+**Location**: `data/raw/keller_data/`
 
 **Format**: MATLAB `.mat` file
 
