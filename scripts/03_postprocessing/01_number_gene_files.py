@@ -1,15 +1,15 @@
 
-input1 = open('D:\Research\Periodic Subgraph Mining\Keller\data\Just_development.txt', 'r')
+input1 = open('../../data/raw/Just_development.txt', 'r')
 data = input1.readlines()
 
-out1 = open('justDevelopmentwithLineNum.txt', 'w')
+out1 = open('../../data/processed/gene_mappings/justDevelopmentwithLineNum.txt', 'w')
 for (number, line) in enumerate(data):
     out1.write('%d\t%s' % (number+1, line))
 
-input2 = open('D:\Research\Periodic Subgraph Mining\Keller\data\genenames.txt', 'r')
+input2 = open('../../data/raw/genenames.txt', 'r')
 data = input2.readlines()
 
-out2 = open('geneNamesWithLineNum.txt', 'w')
+out2 = open('../../data/processed/gene_mappings/geneNamesWithLineNum.txt', 'w')
 for (number, line) in enumerate(data):
     out2.write('%d\t%s' % (number+1, line))
 

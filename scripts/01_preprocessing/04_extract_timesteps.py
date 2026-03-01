@@ -1,8 +1,8 @@
 i = 1
 while i <= 66:
     # read in your reference and the file
-    reference = open("drosophila_subset_t"+str(i)+".txt").read().strip()
-    filetext = open("outputWithEdgeNum.txt").read().strip()
+    reference = open("data/processed/keller_networks/drosophila_subset_t"+str(i)+".txt").read().strip()
+    filetext = open("data/processed/edges_with_given_number/outputWithEdgeNum.txt").read().strip()
 
     # split the reference file into a list of strings, splitting each time you encounter a new line
     splitReference = reference.split("\n")
@@ -31,9 +31,8 @@ while i <= 66:
 
                         # if both have a length of more than one, compare the values in their second columns. If they are equal, print the file line
                         if referenceCells[1] == lineCells[2]:
-                            out = open('t'+str(i)+'.txt', 'a')
-                            for line in fileLine:
-                                out.write(line)
-                            out.write('\n')
+                            out = open('data/processed/timesteps_with_edge_number/t'+str(i)+'.txt', 'a')
+                            out.write(fileLine + '\n')
+                            out.close()
     print("file " + str(i) + " complete")
     i += 1

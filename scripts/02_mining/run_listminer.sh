@@ -18,7 +18,7 @@ cd "$SCRIPT_DIR"
 
 # Define paths
 LISTMINER="../../external_tools/listminer/listminer"
-INPUT_FILE="../../data/processed/listminer_inputs/listMinerInput.txt"
+INPUT_FILE="../../data/processed/listMinerInputs.txt"
 OUTPUT_BASE="../../results/listminer_output"
 
 # Check if ListMiner exists

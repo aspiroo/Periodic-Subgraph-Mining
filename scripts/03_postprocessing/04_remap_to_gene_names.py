@@ -4,47 +4,28 @@ i = 3
 while i <= 9:
     list1 = ['gene1']
     list2 = ['gene2']
-    reference = open("D:\Research\Periodic Subgraph Mining\Postprocessing\\new\geneNumber1th"+str(i)+".txt").read().strip()
-    filetext = open("geneNamesWithLineNum.txt").read().strip()
+    reference = open("../../results/components/gene_numbers/geneNumber1th"+str(i)+".txt").read().strip()
+    filetext = open("../../data/processed/gene_mappings/geneNamesWithLineNum.txt").read().strip()
 
-# split the reference file into a list of strings, splitting each time you encounter a new line
     splitReference = reference.split("\n")
-
-# do the same for the file
     splitFile = filetext.split("\n")
 
-# then, for each line in the reference,
     for referenceLine in splitReference:
-
-    # split that line into a list of strings, splitting each time you encouter a stretch of whitespace
         referenceCells = referenceLine.split()
-
-    # then, for each line in your 'file',
         for fileLine in splitFile:
-
-        # split that line into a list of strings, splitting each time you encouter a stretch of whitespace
             lineCells = fileLine.split()
-
-        # now, for each line in 'reference' check to see if the first value is equal to the first value of the current line in 'file'
             if referenceCells[0] == lineCells[0]:
                 list1.append(lineCells[1])
-            #value1 = lineCells[1]
-            #out = open('gene1.txt', 'a')
-            #out.write(value1 + "\n")
             if referenceCells[1] == lineCells[0]:
                 list2.append(lineCells[1])
-            #value2 = lineCells[1]
-            #out = open('gene2.txt', 'a')
-            #out.write(value2 + "\n")
 
-    with open('D:\Research\Periodic Subgraph Mining\Postprocessing\\new\\Union_Genes_Count\p1s'+str(i)+'.txt','w') as f:
+    with open('../../results/components/gene_names/p1s'+str(i)+'.txt','w') as f:
         writer = csv.writer(f, delimiter='\t')
         writer.writerows(zip(list1,list2))
 
     from xlsxwriter import Workbook
 
-
-    workbook = Workbook('D:\Research\Periodic Subgraph Mining\Postprocessing\\new\\Union_Genes_Count\p1s'+str(i)+'.xlsx')
+    workbook = Workbook('../../results/components/gene_names/p1s'+str(i)+'.xlsx')
     Report_Sheet = workbook.add_worksheet()
 
     for row_ind, row_value in enumerate(zip(list1, list2)):

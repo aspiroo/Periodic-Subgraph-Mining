@@ -2,14 +2,14 @@
 from pathlib import Path
 
 def combine_all_edges():
-    input_dir = Path('../../data/raw/keller_networks')
-    output_file = Path('../../data/processed/inputs.txt')
+    input_dir = Path('data/processed/keller_networks')
+    output_file = Path('data/processed/total_edges/inputs.txt')
     
     output_file.parent.mkdir(parents=True, exist_ok=True)
     
     timestep_files = sorted(input_dir.glob('drosophila_subset_t*.txt'))
     if not timestep_files:
-        input_dir = Path('../../data/processed/timesteps')
+        input_dir = Path('data/processed/timesteps_with_edge_nums')
         timestep_files = sorted(input_dir.glob('timestep_*.txt'))
     
     if not timestep_files:
@@ -24,7 +24,7 @@ def combine_all_edges():
                 outfile.writelines(edges)
                 total_edges += len(edges)
     
-    print(f"✅ Combined {total_edges} edges from {len(timestep_files)} files → {output_file}")
+    print(f"Combined {total_edges} edges from {len(timestep_files)} files → {output_file}")
     return True
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 i = 3
 while i <= 9:
-    reference = open("D:\Research\Periodic Subgraph Mining\listMinerOutputs (with Edges)\\new\p1s"+str(i)+".txt").read().strip()
-    filetext = open("D:\Research\Periodic Subgraph Mining\Preprocessing\Python\outputWithEdgeNum.txt").read().strip()
+    reference = open("../../results/listminer_output/union_genes/p1s"+str(i)+".txt").read().strip()
+    filetext = open("../../data/processed/outputWithEdgeNum.txt").read().strip()
 
     splitReference = reference.split(" ")
     convert2int = list(map(int, splitReference))
@@ -15,7 +15,7 @@ while i <= 9:
         for fileLine in splitFile:
             lineCells = fileLine.split()
             if referenceCells[0] == lineCells[0]:
-                out = open('D:\Research\Periodic Subgraph Mining\Postprocessing\\new\output1th'+str(i)+'.txt', 'a')
+                out = open('../../results/components/remapped/output1th'+str(i)+'.txt', 'a')
                 for line in fileLine:
                     out.write(line)
                 out.write('\n')

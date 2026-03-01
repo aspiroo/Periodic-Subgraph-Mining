@@ -1,10 +1,35 @@
-# Your existing file content here, with replaced paths:
+i = 3
+while i <= 9:
+    delete_list = ["start", "psup", "p", "m", "[", "]", "\n"]
+    fin = open("../../results/listminer_output/p1s"+str(i)+".txt")
+    fout = open("../../results/temp/newfile1th"+str(i)+".txt", "w+")
+    for line in fin:
+        for word in delete_list:
+            line = line.replace(word, "")
+        fout.write(line)
+    fin.close()
+    fout.close()
 
-# Original code lines should go with the necessary replacements as mentioned
+    reference = open("../../results/temp/newfile1th"+str(i)+".txt").read().strip()
 
-# Replace occurrences
-path1 = '../../results/listminer_output/p1s'
-path2 = '../../results/temp/newfile1th'
-path3 = '../../results/listminer_output/union_genes/p1s'
+    splitReference = reference.split(" ")
+    str_list = list(filter(None, splitReference))
+    convert2int = list(map(int, str_list))
+    filt = list(filter(lambda x: x > 588, convert2int))
+    convert2str = list(map(str, filt))
 
-# Rest of the code unchanged
+    def remove_duplicates(values):
+        output = []
+        seen = set()
+        for value in values:
+            if value not in seen:
+                output.append(value)
+                seen.add(value)
+        return output
+
+    result = remove_duplicates(convert2str)
+
+    with open('../../results/listminer_output/union_genes/p1s'+str(i)+'.txt', 'w') as f:
+        for item in result:
+            f.write("%s " % item)
+    i += 1
