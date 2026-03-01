@@ -1,0 +1,10 @@
+gene1	gene2
+cbt	CG2678
+Ptpmeg	Su(z)12
+tow	Mmp2
+zfh2	Rab7
+emp	Rab7
+siz	Mmp2
+Rab5	Su(z)12
+cas	Mmp2
+CG32486	Mmp2

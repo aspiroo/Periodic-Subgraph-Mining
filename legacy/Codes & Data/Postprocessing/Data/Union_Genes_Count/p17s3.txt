@@ -1,0 +1,8 @@
+t,r,a,2
+E,i,p,7,4,E,F
+W
+l,i,n
+C,G,2,6,7,8
+e,g
+c,a,c,t,i,n
+R,a,b,5

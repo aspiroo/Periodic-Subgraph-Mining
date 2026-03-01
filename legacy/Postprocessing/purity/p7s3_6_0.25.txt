@@ -1,0 +1,3 @@
+gene1	gene2
+tow	Mmp2
+Ptpmeg	Su(z)12

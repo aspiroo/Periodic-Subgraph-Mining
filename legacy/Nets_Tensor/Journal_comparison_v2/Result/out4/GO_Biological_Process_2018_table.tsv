@@ -1,0 +1,30 @@
+Term	Overlap	P-value	Adjusted P-value	Old P-value	Old Adjusted P-value	Z-score	Combined Score	Genes
+peripheral nervous system neuron differentiation (GO:0048934)	02-Sep	1.18529E-05	0.000237058	6.33304E-05	0.001266608	-3.968435537	45.01371892	Dif;dl
+inflammatory response (GO:0006954)	02-Sep	1.18529E-05	0.000237058	6.33304E-05	0.001266608	-3.675050977	41.685876	Dif;dl
+peripheral nervous system neuron development (GO:0048935)	02-Nov	1.80965E-05	0.000310226	8.97078E-05	0.001537847	-3.53055507	38.55292258	Dif;dl
+positive regulation of biosynthetic process of antibacterial peptides active against Gram-negative bacteria (GO:0006964)	Feb-13	2.56471E-05	0.000384706	0.000120618	0.001809263	-2.843183739	30.05552822	Dif;dl
+regulation of biosynthetic process of antibacterial peptides active against Gram-negative bacteria (GO:0002813)	Feb-15	3.45019E-05	0.000460025	0.000156043	0.00208058	-2.783257778	28.59657428	Dif;dl
+positive regulation of antibacterial peptide biosynthetic process (GO:0006963)	Feb-21	6.88658E-05	0.00082639	0.000289257	0.003471085	-2.483483344	23.80009117	Dif;dl
+Toll signaling pathway (GO:0008063)	Feb-33	0.000172457	0.001540929	0.00067545	0.007368549	-1.988972021	17.23516322	Dif;dl
+regulation of hemocyte proliferation (GO:0035206)	Feb-41	0.000267118	0.002136941	0.001020248	0.009249517	-1.959850547	16.12529998	Dif;dl
+positive regulation of transcription from RNA polymerase II promoter (GO:0045944)	5/305	5.79121E-07	4.49864E-05	1.00514E-05	0.001096263	-1.087010422	15.61137751	Dif;hyx;dl;Taf4;drm
+positive regulation of gene expression (GO:0010628)	4/204	4.87984E-06	0.000146395	5.33768E-05	0.001266608	-1.218606564	14.90404246	Dif;dl;Dp;drm
+regulation of transcription from RNA polymerase II promoter (GO:0006357)	6/630	7.49773E-07	4.49864E-05	1.8271E-05	0.001096263	-1.040632428	14.676554	Dif;hyx;dl;Dp;Taf4;drm
+positive regulation of macromolecule metabolic process (GO:0010604)	Feb-60	0.000572943	0.00327396	0.002112611	0.014084071	-1.838823463	13.72631049	Dif;Dp
+"positive regulation of transcription, DNA-templated (GO:0045893)"	5/379	1.6896E-06	6.7584E-05	2.85588E-05	0.001142354	-1.008078366	13.39838814	Dif;hyx;dl;Taf4;drm
+negative regulation of cellular macromolecule biosynthetic process (GO:2000113)	3/179	0.00014615	0.001461503	0.000916426	0.009164264	-1.403511267	12.39423262	dl;fs(1)K10;drm
+neuron development (GO:0048666)	Feb-49	0.000382066	0.002547104	0.001433737	0.010753026	-1.533047432	12.06495812	Dif;dl
+dorsal/ventral pattern formation (GO:0009953)	Feb-56	0.000499158	0.003152576	0.001851102	0.013066605	-1.510227438	11.48163734	dl;fs(1)K10
+negative regulation of transcription from RNA polymerase II promoter (GO:0000122)	3/192	0.000179775	0.001540929	0.001119973	0.009249517	-1.166494503	10.05961987	Dif;dl;drm
+cellular response to DNA damage stimulus (GO:0006974)	Feb-93	0.001369626	0.007470686	0.004891609	0.026681506	-1.39431889	9.193047992	Dp;flfl
+regulation of gene expression (GO:0010468)	4/458	0.000116105	0.001266603	0.00115619	0.009249517	-1.00537289	9.109697287	Dif;dl;Dp;Taf4
+positive regulation of nucleic acid-templated transcription (GO:1903508)	2/135	0.002855559	0.014277794	0.009954903	0.042324731	-1.407550003	8.246114458	dl;drm
+negative regulation of gene expression (GO:0010629)	3/245	0.000368132	0.002547104	0.00224169	0.01415804	-1.03235145	8.162873329	dl;fs(1)K10;drm
+negative regulation of nucleic acid-templated transcription (GO:1903507)	2/132	0.002732322	0.014255594	0.009539098	0.042324731	-1.382876377	8.162570846	dl;drm
+"regulation of transcription, DNA-templated (GO:0006355)"	4/623	0.000378067	0.002547104	0.003605314	0.020601792	-1.017973955	8.022080708	dl;Dp;Taf4;drm
+"negative regulation of transcription, DNA-templated (GO:0045892)"	3/279	0.000538224	0.003229346	0.003236204	0.019417224	-1.023596217	7.704849402	Dif;dl;drm
+regulation of cell proliferation (GO:0042127)	2/155	0.003742922	0.016635211	0.01293139	0.044233612	-1.133743589	6.335232862	Dif;dl
+regulation of nucleic acid-templated transcription (GO:1903506)	2/246	0.009168438	0.023917663	0.030639767	0.064504773	-1.290189139	6.053552461	dl;Taf4
+regulation of cellular macromolecule biosynthetic process (GO:2000112)	2/266	0.010651955	0.025293275	0.035368536	0.069574216	-1.281709277	5.821538648	dl;Taf4
+oogenesis (GO:0048477)	2/216	0.007135517	0.020509301	0.024087895	0.0566774	-1.05386384	5.20890174	fs(1)K10;Dp
+female gamete generation (GO:0007292)	2/208	0.006633216	0.020509301	0.022455004	0.055355723	-0.953981007	4.784849605	fs(1)K10;Dp

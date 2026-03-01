@@ -1,0 +1,7 @@
+gene1	gene2
+cbt	CG2678
+sina	neur
+l(2)efl	neur
+Pcaf	neur
+kuk	neur
+Rpd3	neur

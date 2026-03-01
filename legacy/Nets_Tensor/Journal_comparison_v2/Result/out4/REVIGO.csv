@@ -1,0 +1,6 @@
+term_ID,description,frequency,plot_X,plot_Y,plot_size,value,uniqueness,dispensability,representative,eliminated
+GO:0006954,inflammatory response,0.11%,-2.567,-4.805,4.151,41.6859,0.769,0,6954,0
+GO:0048934,peripheral nervous system neuron differentiation,0.00%,5.745,-0.217,2.673,45.0137,0.695,0,48934,0
+GO:0006357,regulation of transcription from RNA polymerase II promoter,1.27%,-4.014,4.213,5.213,14.6766,0.413,0.022,6357,0
+GO:0008063,Toll signaling pathway,0.01%,-4.918,-0.385,2.952,17.2352,0.641,0.225,8063,0
+GO:0035206,regulation of hemocyte proliferation,0.00%,1.837,2.652,2.403,16.1253,0.49,0.347,35206,0

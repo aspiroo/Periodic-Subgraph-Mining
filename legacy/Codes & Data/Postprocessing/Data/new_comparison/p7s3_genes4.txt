@@ -1,0 +1,5 @@
+gene1	gene2
+Idgf5	Su(z)12
+trio	Su(z)12
+Cyt-c-d	emp
+cbt	CG2678

@@ -1,0 +1,9 @@
+gene1	gene2
+Ptpmeg	Su(z)12
+Syx1A	kay
+trio	kay
+Idgf2	sll
+ken	spir
+rdo	spir
+tok	spn-A
+Su(z)12	spn-A

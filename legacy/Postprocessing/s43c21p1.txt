@@ -1,0 +1,6 @@
+gene1	gene2
+zfh2	Rab7
+emp	Rab7
+cas	Mmp2
+CG32486	Mmp2
+siz	Mmp2

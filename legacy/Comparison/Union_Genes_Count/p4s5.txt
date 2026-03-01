@@ -1,0 +1,11 @@
+gene1	gene2
+cbt	CG2678
+blow	CG2678
+sina	neur
+l(2)efl	neur
+Pcaf	neur
+Rpd3	neur
+dpld	neur
+dom	neur
+l(3)mbt	neur
+tld	neur

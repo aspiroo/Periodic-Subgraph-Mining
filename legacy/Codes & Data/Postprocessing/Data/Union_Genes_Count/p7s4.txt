@@ -1,0 +1,13 @@
+gene1	gene2
+cbt	CG2678
+sina	neur
+l(2)efl	neur
+Pcaf	neur
+Rpd3	neur
+Ptpmeg	Su(z)12
+emp	Su(z)12
+cas	Mmp2
+CG32486	Mmp2
+siz	Mmp2
+Rab5	Su(z)12
+zfh2	Rab7

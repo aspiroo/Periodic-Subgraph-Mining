@@ -1,0 +1,4 @@
+gene1	gene2
+cbt	CG2678
+blow	CG2678
+sina	neur

@@ -1,0 +1,6 @@
+SUID,AverageShortestPathLength,BetweennessCentrality,ClosenessCentrality,ClusteringCoefficient,Degree,Eccentricity,IsSingleNode,name,NeighborhoodConnectivity,NumberOfDirectedEdges,NumberOfUndirectedEdges,PartnerOfMultiEdgedNodePairs,Radiality,selected,SelfLoops,shared name,Stress,TopologicalCoefficient
+73,1,1,1,0,2,1,FALSE,CG2678,1,2,0,0,1,FALSE,0,CG2678,2,0
+72,1.5,0,0.66666667,0,1,2,FALSE,cbt,2,1,0,0,0.75,FALSE,0,cbt,0,0
+75,1.5,0,0.66666667,0,1,2,FALSE,blow,2,1,0,0,0.75,FALSE,0,blow,0,0
+77,1,0,1,0,1,1,FALSE,sina,1,1,0,0,1,FALSE,0,sina,0,0
+78,1,0,1,0,1,1,FALSE,neur,1,1,0,0,1,FALSE,0,neur,0,0

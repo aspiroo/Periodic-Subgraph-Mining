@@ -1,0 +1,8 @@
+start 3 psup 11 p 3 m 2 [18213 408]
+start 1 psup 12 p 3 m 0 [18213 408]
+start 1 psup 9 p 4 m 0 [18213 408]
+start 2 psup 12 p 3 m 1 [18213 408]
+start 2 psup 9 p 4 m 1 [18213 408]
+start 3 psup 9 p 4 m 2 [18213 408]
+start 39 psup 9 p 3 m 2 [18254 402]
+start 42 psup 9 p 3 m 2 [18266 17795 118]

@@ -1,0 +1,4 @@
+term_ID,description,frequency,plot_X,plot_Y,plot_size,value,uniqueness,dispensability,representative,eliminated
+GO:0006357,regulation of transcription from RNA polymerase II promoter,1.27%,-5.135,-0.802,5.213,15.3697,0.624,0,6357,0
+GO:0019101,female somatic sex determination,0.00%,4.577,1.874,1.398,39.5276,0.462,0,19101,0
+GO:0048523,negative regulation of cellular process,1.83%,-4.919,1.939,5.371,11.366,0.634,0.324,48523,0

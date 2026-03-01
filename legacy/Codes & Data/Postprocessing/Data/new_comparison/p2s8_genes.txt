@@ -1,0 +1,8 @@
+gene1	gene2
+tin	emp
+lola	CG2678
+cbt	CG2678
+Tm1	CG2678
+Yp1	Yp1
+cbx	Yp1
+Eip63E	G-ialpha65A

@@ -1,0 +1,16 @@
+Term	Overlap	P-value	Adjusted P-value	Old P-value	Old Adjusted P-value	Z-score	Combined Score	Genes
+regulation of ERK1 and ERK2 cascade (GO:0070372)	Feb-33	9.44E-05	0.002868529	0.00052695	0.016288831	-1.908469615	17.68845692	Pde8;alph
+imaginal disc-derived wing morphogenesis (GO:0007476)	4/240	2.43E-06	0.000369465	5.68E-05	0.008627685	-1.151101483	14.8806742	Su(H);cos;osa;alph
+imaginal disc-derived wing vein morphogenesis (GO:0008586)	Feb-49	0.000209381	0.004790185	0.001120036	0.025281737	-1.70793603	14.46853411	Su(H);osa
+imaginal disc-derived wing margin morphogenesis (GO:0008587)	Feb-54	0.000254485	0.004790185	0.001349394	0.025281737	-1.672540663	13.84239598	pot;osa
+wing disc dorsal/ventral pattern formation (GO:0048190)	Feb-52	0.000235922	0.004790185	0.001255161	0.025281737	-1.582577187	13.21769792	Su(H);osa
+"dorsal/ventral pattern formation, imaginal disc (GO:0007450)"	Feb-57	0.000283629	0.004790185	0.001496945	0.025281737	-1.564158428	12.77579919	Su(H);osa
+post-embryonic appendage morphogenesis (GO:0035120)	3/161	4.15E-05	0.001854924	0.000458008	0.016288831	-1.027209839	10.36418008	cos;osa;alph
+wing disc pattern formation (GO:0035222)	Feb-76	0.000504239	0.007664432	0.002602046	0.039551101	-1.343059153	10.19712332	Su(H);osa
+wing disc morphogenesis (GO:0007472)	3/134	2.40E-05	0.001822944	0.000269499	0.016288831	-0.913383962	9.716611125	cos;osa;alph
+positive regulation of nucleic acid-templated transcription (GO:1903508)	2/135	0.001578392	0.021810514	0.007833279	0.058009275	-1.435936392	9.263725912	Su(H);osa
+imaginal disc-derived appendage morphogenesis (GO:0035114)	3/170	4.88E-05	0.001854924	0.000535817	0.016288831	-0.904595795	8.980372504	cos;osa;alph
+positive regulation of gene expression (GO:0010628)	2/204	0.003555491	0.022758996	0.017140363	0.059646122	-1.190106981	6.711325111	Su(H);osa
+"positive regulation of transcription, DNA-templated (GO:0045893)"	2/379	0.011806659	0.025637317	0.053729308	0.078859815	-0.914869166	4.061188009	Su(H);osa
+"regulation of transcription, DNA-templated (GO:0006355)"	2/623	0.030161461	0.040613703	0.127661944	0.150423376	-0.846228762	2.962807927	Su(H);osa
+regulation of transcription from RNA polymerase II promoter (GO:0006357)	2/630	0.030793033	0.040700357	0.130069504	0.152081266	-0.8034931	2.796531057	Su(H);osa

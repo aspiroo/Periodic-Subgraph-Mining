@@ -1,0 +1,5 @@
+gene1	gene2
+cbt	CG2678
+zfh2	Rab7
+emp	Rab7
+siz	Mmp2

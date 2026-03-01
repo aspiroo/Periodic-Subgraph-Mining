@@ -1,0 +1,5 @@
+gene1	gene2
+ken	spir
+tow	Mmp2
+Syx1A	kay
+fred	Su(z)12

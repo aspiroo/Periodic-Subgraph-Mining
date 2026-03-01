@@ -1,0 +1,6 @@
+term_ID,description,frequency,plot_X,plot_Y,plot_size,value,uniqueness,dispensability,representative,eliminated
+GO:0034613,cellular protein localization,1.55%,-2.114,5.471,5.297,6.3195,0.862,0,34613,0
+GO:0048085,adult chitin-containing cuticle pigmentation,0.00%,-5.509,-2.175,2.405,19.724,0.514,0,48085,0
+GO:0030178,negative regulation of Wnt signaling pathway,0.04%,4.602,-2.123,3.681,14.8502,0.617,0.044,30178,0
+GO:0000281,mitotic cytokinesis,0.07%,2.961,3.801,3.953,11.377,0.751,0.123,281,0
+GO:1903508,positive regulation of nucleic acid-templated transcription,0.52%,3.841,-6.327,4.823,8.0421,0.713,0.206,1903508,0

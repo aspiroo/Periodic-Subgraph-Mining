@@ -1,0 +1,16 @@
+gene1	gene2
+Rab5	Su(z)12
+emp	Su(z)12
+cas	Mmp2
+CG32486	Mmp2
+siz	Mmp2
+Atg6	Mmp2
+wupA	Mmp2
+by	Mmp2
+disco	Mmp2
+CG9769	Mmp2
+yellow-f	Sema-2a
+Optix	Eip74EF
+CG14995	spir
+tup	tsh
+wg	tsh

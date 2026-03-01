@@ -1,0 +1,5 @@
+"SUID","AverageShortestPathLength","BetweennessCentrality","ClosenessCentrality","ClusteringCoefficient","Degree","Eccentricity","IsSingleNode","name","NeighborhoodConnectivity","NumberOfDirectedEdges","NumberOfUndirectedEdges","PartnerOfMultiEdgedNodePairs","Radiality","selected","SelfLoops","shared name","Stress","TopologicalCoefficient"
+"72","1.0","0.0","1.0","0.0","1","1","false","Ptpmeg","1.0","1","0","0","1.0","false","0","Ptpmeg","0","0.0"
+"73","1.0","0.0","1.0","0.0","1","1","false","Su(z)12","1.0","1","0","0","1.0","false","0","Su(z)12","0","0.0"
+"75","1.0","0.0","1.0","0.0","1","1","false","tow","1.0","1","0","0","1.0","false","0","tow","0","0.0"
+"76","1.0","0.0","1.0","0.0","1","1","false","Mmp2","1.0","1","0","0","1.0","false","0","Mmp2","0","0.0"
