@@ -137,6 +137,43 @@ Some paper tables require additional analysis scripts:
 
 See **[docs/PAPER_REPLICATION.md](docs/PAPER_REPLICATION.md)** for detailed replication instructions.
 
+## Pipeline Execution Wrappers
+
+For convenience, wrapper scripts automate each stage:
+
+### Stage 1: Preprocessing
+```bash
+python scripts/01_preprocessing/run_preprocessing.py
+```
+
+Runs all 5 preprocessing steps:
+1. Combine edges from 66 timestep files
+2. Remove duplicate edges
+3. Assign edge numbers
+4. Extract timesteps with edge numbers (30+ min)
+5. Generate ListMiner input file
+
+**Output:** `data/processed/listMinerInputs.txt`
+
+### Stage 2: Mining
+```bash
+python scripts/02_mining/run_listminer.py
+```
+
+Runs ListMiner with configurable parameters:
+- Supports multiple (period, support) combinations
+- Generates both regular and edge-annotated outputs
+- Creates statistics files
+
+**Output:** `results/list_miner/*/results.txt`
+
+### Stage 3: Postprocessing
+```bash
+python scripts/03_postprocessing/run_postprocessing.py  # To be created
+```
+
+**Status:** 🚧 In development
+
 ## Documentation
 
 - **[PIPELINE.md](PIPELINE.md)** - Complete execution guide with all commands
