@@ -56,7 +56,7 @@ def main():
                 support = int(meta[3])   # psup value
                 period  = int(meta[5])   # p value
 
-                buckets[period][support].append(edges_str)
+                buckets[period][support].append(line)
 
             except (ValueError, IndexError) as e:
                 print(f"  WARNING: could not parse line: {line[:80]}  ({e})")
@@ -78,8 +78,8 @@ def main():
             out_file   = OUTPUT_DIR / f"p{period}s{support}.txt"
 
             with open(out_file, "w") as f:
-                for edges in entries:
-                    f.write(edges + "\n")
+                for entry in entries:
+                    f.write(entry + "\n")
 
             total_files   += 1
             total_entries += len(entries)

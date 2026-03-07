@@ -1,5 +1,5 @@
 gene1	gene2
-Psn	Ark
-cnc	Tak1
-ttk	ALiX
-CG9445	puc
+Ef1gamma	tin
+sas	spen
+Eip63E	abd-A
+rad50	sec23

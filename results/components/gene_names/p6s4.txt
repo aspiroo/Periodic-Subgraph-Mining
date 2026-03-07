@@ -1,4 +1,4 @@
 gene1	gene2
-Psn	Ark
-bib	noc
-Akt1	Rack1
+Ef1gamma	tin
+Mmp1	v
+Dif	Rca1

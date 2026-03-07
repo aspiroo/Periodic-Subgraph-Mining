@@ -1,5 +1,5 @@
 gene1	gene2
-cnc	Tak1
-Mitf	mask
-cin	thr
-ttk	ALiX
+sas	spen
+lmd	gl
+bon	hpo
+Eip63E	abd-A

@@ -1,4 +1,6 @@
 gene1	gene2
-Psn	Ark
-Akt1	Rack1
-ttk	ALiX
+Ef1gamma	tin
+Dif	Rca1
+Cka	Pk92B
+sas	spen
+Eip63E	abd-A

@@ -1,5 +1,8 @@
 gene1	gene2
-Psn	Ark
-bib	noc
-tral	tud
-lmd	sdt
+Ef1gamma	tin
+Mmp1	v
+Dif	Rca1
+Bap60	Dat
+cactin	PebIII
+rad50	sec23
+ird5	hyd

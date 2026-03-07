@@ -1,6 +1,8 @@
 gene1	gene2
-car	Pcaf
-cnc	Tak1
-Mitf	mask
-cin	thr
-ttk	ALiX
+sgg	pot
+Dif	Rca1
+bon	esc
+sas	spen
+lmd	gl
+bon	hpo
+Eip63E	abd-A
