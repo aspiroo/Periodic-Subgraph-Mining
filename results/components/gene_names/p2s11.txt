@@ -1,0 +1,6 @@
+gene1	gene2
+CG13850	Rho1
+cnc	Tak1
+Mitf	mask
+cin	thr
+ttk	ALiX

@@ -1,0 +1,4 @@
+gene1	gene2
+Psn	Ark
+bib	noc
+Akt1	Rack1

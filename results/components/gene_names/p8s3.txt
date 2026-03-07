@@ -1,0 +1,11 @@
+gene1	gene2
+Psn	Ark
+Akt1	Rack1
+Dcp-1	ix
+Dhc64C	CG34417
+Rbp9	noc
+par-6	ine
+bib	noc
+loco	18w
+tral	tud
+lmd	sdt

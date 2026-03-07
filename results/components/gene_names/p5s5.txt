@@ -1,0 +1,10 @@
+gene1	gene2
+Psn	Ark
+Akt1	Rack1
+Dcp-1	ix
+Dhc64C	CG34417
+Rbp9	noc
+cnc	Tak1
+Mitf	mask
+cin	thr
+ttk	ALiX

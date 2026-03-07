@@ -1,0 +1,6 @@
+gene1	gene2
+car	Pcaf
+Mitf	mask
+cin	thr
+ttk	ALiX
+cnc	Tak1

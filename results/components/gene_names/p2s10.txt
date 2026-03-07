@@ -1,0 +1,16 @@
+gene1	gene2
+CG13850	Rho1
+cnc	Tak1
+Mitf	mask
+cin	thr
+ttk	ALiX
+CG6416	CG9509
+Idgf2	drm
+Oseg1	Syx1A
+pyd	wal
+Pak	dnc
+odd	Mitf
+emb	loco
+FKBP59	cas
+E2f	e
+dmt	pot

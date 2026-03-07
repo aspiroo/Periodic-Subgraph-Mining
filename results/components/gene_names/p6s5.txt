@@ -1,0 +1,5 @@
+gene1	gene2
+Psn	Ark
+CG9445	puc
+cnc	Tak1
+ttk	ALiX
