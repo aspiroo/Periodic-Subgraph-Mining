@@ -1,8 +1,8 @@
 gene1	gene2
-Ef1gamma	tin
-Mmp1	v
-Dif	Rca1
-Bap60	Dat
-cactin	PebIII
-rad50	sec23
-ird5	hyd
+trio	Su(z)12
+kuk	neur
+Rpd3	neur
+dpld	neur
+dom	neur
+l(3)mbt	neur
+tld	neur

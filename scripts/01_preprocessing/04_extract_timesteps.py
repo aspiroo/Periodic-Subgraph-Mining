@@ -1,5 +1,5 @@
 i = 1
-while i <= 66:
+while i <= 30:
     # read in your reference and the file
     reference = open("data/processed/keller_networks/drosophila_subset_t"+str(i)+".txt").read().strip()
     filetext = open("data/processed/outputWithEdgeNum.txt").read().strip()

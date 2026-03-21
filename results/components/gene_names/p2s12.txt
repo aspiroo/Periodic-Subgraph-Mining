@@ -1,5 +1,5 @@
 gene1	gene2
-sas	spen
-lmd	gl
-bon	hpo
-Eip63E	abd-A
+Crk	RpL30
+CG12301	dnc
+brm	CG2681
+Nrt	Akt1

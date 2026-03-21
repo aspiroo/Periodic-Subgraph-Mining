@@ -1,3 +1,2 @@
 gene1	gene2
-sas	spen
-Eip63E	abd-A
+kuk	neur

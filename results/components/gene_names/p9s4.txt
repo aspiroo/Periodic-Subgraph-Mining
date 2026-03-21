@@ -1,2 +1,4 @@
 gene1	gene2
-Ef1gamma	tin
+Syx1A	CG32082
+Sxl	gl
+ry	Sur

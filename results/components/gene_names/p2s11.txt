@@ -1,6 +1,7 @@
 gene1	gene2
-bon	esc
-sas	spen
-lmd	gl
-bon	hpo
-Eip63E	abd-A
+jumu	tok
+Crk	RpL30
+CG12301	dnc
+brm	CG2681
+Nrt	Akt1
+Atpalpha	baz

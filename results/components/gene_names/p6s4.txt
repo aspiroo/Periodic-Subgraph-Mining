@@ -1,4 +1,3 @@
 gene1	gene2
-Ef1gamma	tin
-Mmp1	v
-Dif	Rca1
+E(bx)	Su(z)12
+trio	Su(z)12

@@ -1,1 +1,1 @@
-start 15 psup 4 p 10 m 5 [18479]
+start 15 psup 4 p 10 m 30 [ 18479 ]

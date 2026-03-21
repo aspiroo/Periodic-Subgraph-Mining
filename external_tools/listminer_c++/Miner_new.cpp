@@ -23,14 +23,13 @@ bool Subsume(ListNode* G, int p, int Sigma);
 void printGx(ListNode* G, int period)
 {
       fstream myfile;
-    //  myfile.open("results_large.txt",ios::app | ios::out);
-    myfile.open("results.txt",ios::app | ios::out);
+      myfile.open("c:/Users/safwa/Periodic-Subgraph-Mining/results/list_miner/default_run/results.txt",ios::app | ios::out);
       myfile<<G->start<<" "<<G->end<<" "<<G->support<<" "<<period<<endl;
- //     myfile<<"  [ ";
- //     list<int> Gt (G->graph);
- //     for(list<int>::iterator iter = Gt.begin(); iter!= Gt.end(); iter++ )
- //             myfile<<*iter <<"  ";
- //     myfile<<"]"<< endl;
+      myfile<<"  [ ";
+      list<int> Gt (G->graph);
+      for(list<int>::iterator iter = Gt.begin(); iter!= Gt.end(); iter++ )
+              myfile<<*iter <<"  ";
+      myfile<<"]"<< endl;
 
 
       myfile.close();
@@ -47,7 +46,7 @@ int Miner(int Sigma, int Pmax)
    fstream myfile;
    //myfile.open("enron-dated.itemset", fstream::in);
    //myfile.open("enron-large", fstream::in);
-   myfile.open("listMinerInputs.txt",fstream::in);
+   myfile.open("c:/Users/safwa/Periodic-Subgraph-Mining/data/processed/listMinerInputs.txt",fstream::in);
    //myfile.open("test1",fstream::in);
    //myfile.open("test",fstream::in);
    if(myfile.is_open())

@@ -10,7 +10,7 @@ using namespace std;
 
 int*  get_S(string a)
 {
-    cout<<"get in here"<<endl; 
+    //cout<<"get in here"<<endl; 
     int *A = new int[3];
     int p;
 
@@ -33,7 +33,7 @@ int*  get_S(string a)
     }
     A[0] =  ( (A[0])/100) * 100 ;
     cout<<A[0]<<" "<<A[1]<< " "<<A[2]<<endl; 
-    cout<<"get out of here"<<endl; 
+    //cout<<"get out of here"<<endl; 
     return A;
 }
 
@@ -49,7 +49,7 @@ int *PSE;
 int start, support;
 
 fstream f1,f2;
-f1.open("results.txt", iostream::in);
+f1.open("c:/Users/safwa/Periodic-Subgraph-Mining/results/list_miner/default_run/results.txt", iostream::in);
 string a;
 while(f1.good()){
    getline(f1, a);
@@ -64,7 +64,7 @@ while(f1.good()){
 f1.close();
 
 
-f2.open("results_stat.txt", iostream::out);
+f2.open("c:/Users/safwa/Periodic-Subgraph-Mining/results/list_miner/default_run/results_stat.txt", iostream::out);
 for(int i=0;i<2100;i++)
    for(int j=0; j<100; j++)
       if(Stat[i][j]>0)

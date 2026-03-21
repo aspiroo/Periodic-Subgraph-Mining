@@ -1,5 +1,5 @@
 gene1	gene2
-Ef1gamma	tin
-sas	spen
-Eip63E	abd-A
-rad50	sec23
+Syx1A	CG32082
+Crk	RpL30
+Nrt	Akt1
+Myo31DF	amx
