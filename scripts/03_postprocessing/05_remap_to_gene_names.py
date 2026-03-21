@@ -6,26 +6,29 @@ Outputs both .txt (tab-delimited) and .xlsx per (period, support).
 
 import csv
 from pathlib import Path
+import shutil
 
 REPO_ROOT = Path(__file__).parent.parent.parent
 
 PERIOD_CONFIGS = [
-    (1,  "1th",  9),
-    (2,  "2nd", 12),
-    (3,  "3rd",  9),
-    (4,  "4th",  7),
-    (5,  "5th",  6),
-    (6,  "6th",  5),
-    (7,  "7th",  5),
-    (8,  "8th",  4),
-    (9,  "9th",  4),
-    (10, "10th", 4),
+    (1,  "1th",  9),   # max support = 30/1 = 30, but paper caps at 9
+    (2,  "2nd",  9),   # max support = 30/2 = 15, but paper caps at 9
+    (3,  "3rd",  9),   # max support = 30/3 = 10
+    (4,  "4th",  7),   # max support = 30/4 = 7
+    (5,  "5th",  6),   # max support = 30/5 = 6
+    (6,  "6th",  5),   # max support = 30/6 = 5
+    (7,  "7th",  4),   # max support = 30/7 = 4
+    (8,  "8th",  3),   # max support = 30/8 = 3
+    (9,  "9th",  3),   # max support = 30/9 = 3
+    (10, "10th", 3),   # max support = 30/10 = 3
 ]
 
 GENE_NUMBERS_DIR = REPO_ROOT / "results" / "components" / "gene_numbers"
 NAME_MAP         = REPO_ROOT / "data" / "processed" / "gene_mappings" / "geneNamesWithLineNum.txt"
 OUTPUT_DIR       = REPO_ROOT / "results" / "components" / "gene_names"
 
+if OUTPUT_DIR.exists():
+    shutil.rmtree(OUTPUT_DIR)
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 if not NAME_MAP.exists():

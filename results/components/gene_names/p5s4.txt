@@ -1,7 +1,0 @@
-gene1	gene2
-kuk	neur
-Rpd3	neur
-puc	tra2
-sgg	tra2
-tum	pbl
-wls	CG33205

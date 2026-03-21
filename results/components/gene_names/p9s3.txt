@@ -1,8 +1,0 @@
-gene1	gene2
-trio	Su(z)12
-kuk	neur
-Rpd3	neur
-dpld	neur
-dom	neur
-l(3)mbt	neur
-tld	neur

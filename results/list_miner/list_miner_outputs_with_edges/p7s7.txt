@@ -1,2 +1,0 @@
-start 9 psup 7 p 7 m 42 [ 18479 ]
-start 10 psup 7 p 7 m 42 [ 18479 ]

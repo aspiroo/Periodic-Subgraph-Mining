@@ -1,3 +1,13 @@
+import os
+from pathlib import Path
+
+# Delete existing files to avoid append mode accumulation
+out_dir = Path('data/processed/timesteps_with_edge_number')
+out_dir.mkdir(parents=True, exist_ok=True)
+for f in out_dir.glob('t*.txt'):
+    f.unlink()
+print(f"Cleared {out_dir}")
+
 i = 1
 while i <= 30:
     # read in your reference and the file

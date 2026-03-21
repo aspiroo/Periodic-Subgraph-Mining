@@ -1,3 +1,14 @@
+from pathlib import Path
+
+# Clear output file first
+out_file = Path('data/processed/listMinerInputs.txt')
+if out_file.exists():
+    out_file.unlink()
+print("Cleared listMinerInputs.txt")
+
+import re
+import os
+
 i = 1
 while i <= 30:
     string1 = open('data/processed/timesteps_with_edge_number/t'+str(i)+'.txt').read().strip()

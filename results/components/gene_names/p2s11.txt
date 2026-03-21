@@ -1,7 +1,0 @@
-gene1	gene2
-jumu	tok
-Crk	RpL30
-CG12301	dnc
-brm	CG2681
-Nrt	Akt1
-Atpalpha	baz

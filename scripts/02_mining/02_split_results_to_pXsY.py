@@ -19,6 +19,13 @@ import re
 import sys
 from pathlib import Path
 from collections import defaultdict
+import shutil
+
+out_dir = Path('results/list_miner/list_miner_outputs_with_edges')
+if out_dir.exists():
+    shutil.rmtree(out_dir)
+out_dir.mkdir(parents=True)
+print("Cleared list_miner_outputs_with_edges")
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]

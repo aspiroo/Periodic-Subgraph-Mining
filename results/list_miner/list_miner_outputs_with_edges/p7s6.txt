@@ -1,3 +1,0 @@
-start 13 psup 6 p 7 m 35 [ 18479 ]
-start 14 psup 6 p 7 m 35 [ 18479 ]
-start 15 psup 6 p 7 m 35 [ 18479 ]

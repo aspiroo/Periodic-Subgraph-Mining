@@ -1,7 +1,0 @@
-gene1	gene2
-Syx1A	CG32082
-Sxl	gl
-ry	Sur
-Crk	RpL30
-Nrt	Akt1
-sav	crol

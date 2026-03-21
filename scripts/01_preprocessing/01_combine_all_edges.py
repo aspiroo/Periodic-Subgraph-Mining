@@ -1,6 +1,7 @@
 """Combine all edges from 66 timestep files into one master file."""
 from pathlib import Path
 import os
+import re
 
 def combine_all_edges():
     # Get the script's directory
@@ -17,8 +18,11 @@ def combine_all_edges():
     print(f"Directory exists: {input_dir.exists()}")
     
     output_file.parent.mkdir(parents=True, exist_ok=True)
-    
-    timestep_files = sorted(input_dir.glob('drosophila_subset_t*.txt'))
+
+    timestep_files = sorted(
+        input_dir.glob('drosophila_subset_t*.txt'),
+        key=lambda f: int(re.search(r't(\d+)', f.name).group(1))
+    )
 
     print(f"Found {len(timestep_files)} files")
     

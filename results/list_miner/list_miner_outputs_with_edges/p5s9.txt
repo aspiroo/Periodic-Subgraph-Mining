@@ -1,3 +1,0 @@
-start 11 psup 9 p 5 m 40 [ 18479 ]
-start 12 psup 9 p 5 m 40 [ 18479 ]
-start 13 psup 9 p 5 m 40 [ 18479 ]

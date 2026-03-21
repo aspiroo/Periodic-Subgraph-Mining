@@ -108,6 +108,12 @@ def prepare_io(output_subdir: Path) -> None:
 
     output_subdir.mkdir(parents=True, exist_ok=True)
 
+    # Clear results.txt before run (C++ opens in append mode)
+    results_file = output_subdir / "results.txt"
+    if results_file.exists():
+        results_file.unlink()
+        print(f"  ✓ Cleared results.txt")
+
     cpp_input = CPP_SOURCE_DIR / "listMinerInputs.txt"
     shutil.copy2(INPUT_FILE, cpp_input)
     print_info(f"  ✓ Copied input to: {cpp_input} ({cpp_input.stat().st_size} bytes)")
