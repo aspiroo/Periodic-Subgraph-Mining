@@ -1,5 +1,0 @@
-start 3 psup 4 p 7 m 2 [18213 408] 
-start 4 psup 4 p 7 m 3 [18213 408] 
-start 5 psup 4 p 7 m 4 [18213 408] 
-start 6 psup 4 p 7 m 5 [18213 408] 
-start 7 psup 4 p 7 m 6 [18213 408] 

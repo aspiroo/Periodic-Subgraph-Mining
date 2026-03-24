@@ -1,0 +1,105 @@
+"""
+Stage 3, Step 1: Generate Table I - Unique Genes per Period/Support
+Counts unique genes in each periodic subgraph by mapping edges to genes.
+"""
+
+from pathlib import Path
+from collections import defaultdict
+
+REPO_ROOT = Path(__file__).parent.parent.parent
+
+UNION_GENES_DIR = REPO_ROOT / "results" / "list_miner" / "union_genes"
+EDGE_MAP_FILE  = REPO_ROOT / "data" / "processed" / "outputWithEdgeNum.txt"
+OUTPUT_DIR     = REPO_ROOT / "results" / "analysis"
+
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+# Load edge map: edge_id -> (gene1, gene2)
+edge_map = {}
+if not EDGE_MAP_FILE.exists():
+    raise FileNotFoundError(f"Edge map not found: {EDGE_MAP_FILE}")
+
+with open(EDGE_MAP_FILE, "r") as f:
+    for line in f:
+        parts = line.strip().split()
+        if len(parts) >= 3:
+            edge_id = parts[0]
+            gene1 = parts[1]
+            gene2 = parts[2]
+            edge_map[edge_id] = (gene1, gene2)
+
+print(f"Loaded {len(edge_map)} edges from mapping file")
+
+# Process union_genes files and count genes
+gene_counts = defaultdict(lambda: defaultdict(int))
+
+if not UNION_GENES_DIR.exists():
+    raise FileNotFoundError(f"Union genes directory not found: {UNION_GENES_DIR}")
+
+for union_file in sorted(UNION_GENES_DIR.glob("p*s*.txt")):
+    # Parse filename: p{period}s{support}.txt
+    parts = union_file.stem.replace("p", "").replace("s", " ").split()
+    period = int(parts[0])
+    support = int(parts[1])
+    
+    # Read edge numbers and count unique genes
+    unique_genes = set()
+    with open(union_file, "r") as f:
+        for line in f:
+            edge_ids = line.strip().split()
+            for edge_id in edge_ids:
+                if edge_id in edge_map:
+                    gene1, gene2 = edge_map[edge_id]
+                    unique_genes.add(gene1)
+                    unique_genes.add(gene2)
+    
+    gene_counts[period][support] = len(unique_genes)
+    print(f"  p{period}s{support}: {len(unique_genes)} unique genes")
+
+# Generate TABLE I output
+print("\n" + "="*70)
+print("TABLE I: Number of Unique Genes per Period/Support")
+print("="*70)
+
+# Determine ranges
+periods = sorted(set(p for p in gene_counts.keys()))
+supports = sorted(set(s for p_dict in gene_counts.values() for s in p_dict.keys()))
+
+if periods and supports:
+    min_period = min(periods)
+    max_period = max(periods)
+    min_support = min(supports)
+    max_support = max(supports)
+    
+    # Print table header
+    print(f"{'Support':<10}", end="")
+    for period in range(min_period, max_period + 1):
+        print(f"{period:>8}", end="")
+    print()
+    print("-" * (10 + 8 * (max_period - min_period + 1)))
+    
+    # Print table rows
+    for support in range(min_support, max_support + 1):
+        print(f"{support:<10}", end="")
+        for period in range(min_period, max_period + 1):
+            count = gene_counts.get(period, {}).get(support, None)
+            if count is not None:
+                print(f"{count:>8}", end="")
+            else:
+                print(f"{'':>8}", end="")
+        print()
+    
+    # Save to file
+    output_file = OUTPUT_DIR / "table_i_gene_counts.txt"
+    with open(output_file, "w") as f:
+        f.write("Period\tSupport\tUnique_Genes\n")
+        for period in sorted(gene_counts.keys()):
+            for support in sorted(gene_counts[period].keys()):
+                count = gene_counts[period][support]
+                f.write(f"{period}\t{support}\t{count}\n")
+    
+    print(f"\nResults saved to: {output_file}")
+else:
+    print("ERROR: No gene count data generated")
+
+print("\nDone: 01_generate_table_i.py")
