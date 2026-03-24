@@ -283,11 +283,6 @@ bool Subsume(ListNode *G, int p, int Sigma)
     return subsumed;
 }
 
-
-
-
-
-
 int main(){
    H = new Table();
    for(int i=0;i<40+1;i++)
