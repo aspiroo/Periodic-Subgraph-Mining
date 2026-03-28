@@ -12,7 +12,7 @@ i = 1
 while i <= 30:
     # read in your reference and the file
     reference = open("data/processed/keller_networks/drosophila_subset_t"+str(i)+".txt").read().strip()
-    filetext = open("data/processed/outputWithEdgeNum.txt").read().strip()
+    filetext = open("data/processed/outputWithEdgeNumReal.txt").read().strip()
 
     # split the reference file into a list of strings, splitting each time you encounter a new line
     splitReference = reference.split("\n")

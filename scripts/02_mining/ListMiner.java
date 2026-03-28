@@ -23,7 +23,7 @@ public class ListMiner {
     public static int psc;
 
     private static final int DEFAULT_MIN_SUPPORT = 3;
-    private static final int DEFAULT_MIN_PERIOD = 2;
+    private static final int DEFAULT_MIN_PERIOD = 1;
     private static final int DEFAULT_MAX_PERIOD = 10;
     private static final int DEFAULT_SMOOTH_STEP = 1;
     private static final boolean DEFAULT_PRINT_GRAPHS = false;

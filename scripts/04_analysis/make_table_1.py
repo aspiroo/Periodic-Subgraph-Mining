@@ -21,7 +21,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 INPUT_DIR      = REPO_ROOT / "results" / "list_miner" / "list_miner_outputs_with_edges"
-EDGE_MAP_FILE  = REPO_ROOT / "data" / "processed" / "outputWithEdgeNum.txt"
+EDGE_MAP_FILE  = REPO_ROOT / "data" / "processed" / "outputWithEdgeNumReal.txt"
 OUT_DIR        = REPO_ROOT / "results" / "tables"
 
 # Paper grid (Table I rows = periods 1-9, cols = supports 3-9)

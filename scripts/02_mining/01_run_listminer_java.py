@@ -25,7 +25,7 @@ STATS_FILE    = OUTPUT_DIR / "results_stat.txt"
 # ListMiner parameters matching the paper
 MIN_SUPPORT = 3
 MIN_PERIOD  = 1
-MAX_PERIOD  = 22   # floor(66/3) = 22 for 66 timesteps
+MAX_PERIOD  = 10   # floor(66/3) = 22 for 66 timesteps
 
 
 def check_prerequisites() -> bool:
